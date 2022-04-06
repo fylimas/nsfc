@@ -1,0 +1,306 @@
+% -------------------------------------------------
+% NSFC YSF LaTeX template.
+% Latest version: https://github.com/YimianDai/NSFC-LaTeX
+% Latest document: http://lowrank.science/NSFC-LaTeX/
+% Yimian Dai, Feb. 2017. Questions? yimian.dai@gmail.com ;
+%
+% Thank Prof. Mingming Chen for his pioneer work. 
+% http://bbs.ctex.org/forum.php?mod=viewthread&tid=153098&extra=page%3D1
+% -------------------------------------------------
+
+%------------------------
+%xeCJK包的命令
+%------------------------
+%特殊符号的宽度
+\xeCJKsetwidth{，。；}{0.7em}%符号宽度，可添加‘’“”
+\xeCJKsetup{%中英文间空格的宽度
+	CJKecglue = \hspace{0.3em},}
+
+
+\usepackage{fontspec}
+%注意，只有字体本身有粗斜体，或都是粗体斜体都是fake的，才能输出粗斜体
+
+%微软楷体字
+\setCJKfamilyfont{WINkai}[%中文
+	Path=./fonts/,
+	AutoFakeSlant=0.3,
+	AutoFakeBold=3,
+	]{Kaiti.ttf}
+\newfontfamily{\WINkai}[%英文
+	Path=./fonts/,
+	AutoFakeSlant=0.3,
+	AutoFakeBold=3,
+	]{Kaiti.ttf}
+%微软宋体
+\setCJKfamilyfont{WINsong}[%中文
+	Path=./fonts/,
+	AutoFakeSlant=0.3,
+	AutoFakeBold=3,
+	]{SimSun.ttf}
+\newfontfamily{\WINsong}[%英文
+	Path=./fonts/,
+	]{SimSun.ttf}
+
+%本机楷体
+\setCJKfamilyfont{MACkai}[%中文
+	BoldFont = * Black,%
+	AutoFakeSlant=0.3,
+	]{Kaiti SC}
+\newfontfamily{\MACkai}[%英文
+	]{Cambria}
+%本机宋体
+\setCJKfamilyfont{MACsong}[%中文
+	UprightFont = * Light,
+	BoldFont = * Bold,
+	AutoFakeSlant=0.3,
+	]{Songti SC}
+\newfontfamily{\MACsong}[%英文
+	]{Times New Roman}
+
+%设置模版字体
+\newcommand{\zhYSFkai}{\CJKfamily{MACkai}}
+\newcommand{\enYSFkai}{\MACkai}%{\WINkai}
+%
+\newcommand{\zhYSFsong}{\CJKfamily{MACsong}}
+\newcommand{\enYSFsong}{\MACsong}
+
+\setCJKsansfont[BoldFont=* Medium]{Heiti SC}
+%\setCJKfamilyfont{zhsong}[
+%        UprightFont = * Light,
+%           BoldFont = * Bold,
+%]{Songti SC}
+%\setCJKfamilyfont{zhhei}[BoldFont=* Medium]{Heiti SC}
+
+
+
+
+%\setCJKmainfont[
+%	Path=./fonts/,%系统自带Songti SC
+%	UprightFont = * Light,
+%	BoldFont = * Bold,
+%	AutoFakeSlant=0.3,
+%	BoldItalicFont = Kaiti SC Bold,
+%]{Songti SC}
+%字号
+%初号42pt，小初36pt，一号26pt，小一24pt，二号22pt，小二18pt
+%三号16pt，小三15pt，四号14pt，小四号 12pt，五号 10.5pt
+%小五9pt，六号 7.5pt ，小六6.5pt，七号 5.5pt ，八号5pt
+
+%------------------------
+%xcolor命令
+%------------------------
+%颜色
+\usepackage{xcolor}
+\definecolor{YSFblue}{RGB}{0, 112, 192}
+\definecolor{HighLight}{RGB}{0,31,141}
+
+\usepackage{enumitem}
+% enumitem command
+\setenumerate[1]{itemsep = 0pt, parsep = 0pt, topsep = 2bp}
+\setitemize[1]{itemsep = -2pt, parsep = 0pt, topsep = 2bp}
+
+\setlength{\parskip}{0.1\baselineskip}
+
+% setspace command
+% \setstretch{1.5} % 22 bp / 14 pt = 1.571
+
+%------------------------
+%模版部分
+%------------------------
+% For the chapter name like （一）立项依据与研究内容（4000-8000字）
+\let\origchapter\chapter
+\renewcommand\chapter{\@ifstar{\starchapter}{\nostarchapter}}
+\newcommand\nostarchapter[1]{%
+    \begingroup
+    \vspace{6pt}\stepcounter{chapter}
+    \color{YSFblue}\zhYSFkai\enYSFkai\fontsize{14pt}{22pt}\selectfont%
+    \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
+    \par\indent\textbf{（\chinese{chapter}）}#1\par
+    \vspace{0pt}
+    \endgroup}
+    
+\newcommand\starchapter[1]{\vspace{-1em}\origchapter*{#1}\vspace{-0em}}
+
+% For the section name like 2．项目的研究内容、研究目标，以及拟解决的关键科学问题（此部分为重点阐述内容）；
+\let\origsection\section
+\renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
+\newcommand\nostarsection[1]{%
+    \begingroup
+%     \vspace{0pt}
+    \stepcounter{section}
+    \color{YSFblue}\zhYSFkai\enYSFkai\fontsize{14pt}{22pt}\selectfont%
+    \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
+    \par\indent\arabic{section}．#1\par
+% \vspace{11pt}
+    \endgroup}
+\newcommand\starsection[1]{\origsection*{#1}}
+
+
+
+
+%------------------------
+%正文部分的标题
+%------------------------
+\let\origsubsection\subsection
+\renewcommand\subsection{\@ifstar{\starsubsection}{\nostarsubsection}}
+\newcommand\nostarsubsection[1]{%
+    \begingroup\color{HighLight}
+    \vspace{6pt}
+    \stepcounter{subsection}
+    \zhYSFkai\enYSFkai\fontsize{13pt}{22pt}\selectfont\bfseries%
+    \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
+    \par\noindent\arabic{section}.\arabic{subsection}#1\par
+    \vspace{2pt}
+    \endgroup}
+%\newcommand\nostarsubsection[1]{\vspace{-1em}\origsubsection*{#1}\vspace{-0em}}
+\newcommand\starsubsection[1]{%
+    \begingroup\color{HighLight}
+    \vspace{6pt}
+    %\stepcounter{subsection}
+    \zhYSFkai\enYSFkai\fontsize{13pt}{22pt}\selectfont\bfseries%
+    \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
+%    \par\noindent\arabic{section}.\arabic{subsection}#1\par
+    \par\noindent#1\par
+    \vspace{2pt}
+    \endgroup}
+
+%\renewcommand\thesection{\arabic{section}．}
+%\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+
+\let\origsubsubsection\subsubsection
+\renewcommand\subsubsection{\@ifstar{\starsubsubsection}{\nostarsubsubsection}}
+\newcommand\nostarsubsubsection[1]{%
+    \begingroup\color{HighLight}
+%     \vspace{0pt}
+    \stepcounter{subsubsection}
+    \zhYSFkai\enYSFkai\fontsize{13pt}{22pt}\selectfont%
+    \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
+    \par\indent（\arabic{subsubsection}）#1\par
+% \vspace{11pt}
+    \endgroup}
+\newcommand\starsubsubsection[1]{%
+    \begingroup\color{HighLight}
+	\vspace{2pt}
+    \stepcounter{subsubsection}
+    \zhYSFkai\enYSFkai\fontsize{12.5pt}{22pt}\selectfont%
+    \setlength{\baselineskip}{20pt}%最后设置，防止被fontsize中的覆盖
+    \par\indent#1\par
+    %\vspace{-1pt}
+    \endgroup}
+%------------------------
+%正文段落
+%------------------------
+\newenvironment{MS}%
+	{%\begingroup\zhYSFsong\enYSFsong\fontsize{12.5pt}{22pt}\selectfont%
+	\begingroup\zhYSFkai\enYSFkai\fontsize{12.5pt}{23pt}\selectfont%
+	\setlength{\baselineskip}{22.1pt}}
+	{\endgroup}
+
+%CTEX包自动引用xeCJK包，文档查看xeCJK
+%CJKunderdot,CJKunderline,CJKunderdblline,CJKunderwave
+\newcommand\underwave{\CJKunderwave[format=\color{blue},depth=0.35em]}
+
+%在Word中我们只要选中孤行控制，Word就不会将一段的第一行或者最后一行放在不同的页面。Latex中好像没有相应的命令。Latex只是尽量防止孤行，当避免孤行会导致大量的页面空白的时候，Latex会放弃避免孤行。我们可以改变孤行的惩罚权重来告诉Latex我们更在乎孤行。有两个参数控制这些：
+%\widowpenalty=4000
+%\clubpenalty=4000
+%其中\widowpentalty是出现尾行分页所产生的惩罚值，\clubpenalty是出现首行分页的惩罚值。默认是150。我把他们都设成4000，就是告诉latex要更努力的减少孤行。如果设定惩罚为10000，就会完全的避免孤行，但是排版会很难看，因为latex会放弃一切的去排除孤行。
+%\widowpenalty=8000
+%\clubpenalty=8000
+
+%------------------------
+%公式、图、表
+%------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+% Size of the math equations
+\DeclareMathSizes{10}{10}{7}{5}
+\DeclareMathSizes{11}{11}{7.7}{5.5}
+\DeclareMathSizes{12.5}{11}{8.4}{6}
+\DeclareMathSizes{13}{13}{9.1}{6.5}
+\DeclareMathSizes{14}{14}{9.8}{7}
+
+
+\usepackage{graphicx} 
+\usepackage[subrefformat=parens,labelformat=parens]{subfig} %
+\usepackage{booktabs} 
+% \usepackage[citebordercolor = white]{hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}%须在hyperref后边
+\crefformat{table}{表~#2#1#3}
+\crefformat{figure}{图~#2#1#3}
+\crefformat{equation}{式~（#2#1#3）}
+\usepackage[figurewithin=none]{caption}
+\DeclareCaptionFont{capfont}{\zhYSFkai\enYSFkai\fontsize{11pt}{22pt}\selectfont\bfseries} % Caption font
+\DeclareCaptionFont{subfont}{\zhYSFkai\enYSFkai\fontsize{11pt}{22pt}\selectfont\bfseries} % Sub-caption font
+\captionsetup{font = capfont}
+\captionsetup[subfigure]{font = subfont}
+\captionsetup[figure]{labelsep=period}
+\captionsetup[table]{labelsep=space}
+
+%\numberwithin{figure}{section}%关联图号和章节，应该是每一个section重置一下图号计数器
+\renewcommand {\thefigure}{\arabic{figure}}% {\thesection{}-\arabic{figure}}%修改图号格式
+
+
+%带圈数字
+%latex自带\textcircled，但是效果很差
+%\usepackage{tikz}
+%\usepackage{etoolbox}
+%\newcommand*{\circled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)%
+%    circle (.5em) node {\makebox[1em][c]{\small #1}};}}
+%\robustify{\circled}
+%\begin{enumerate}[label=\circled{\arabic*}]	
+%\end{enumerate}
+
+\font\symWingdings = "Wingdings"%
+\renewcommand{\labelitemi}{\color{HighLight}\symWingdings\XeTeXglyph153}%第一层
+
+
+%------------------------
+%脚注
+%------------------------
+%脚注分割横线
+\makeatletter
+\newskip\@footindent
+\@footindent=1em
+\renewcommand\footnoterule{\vspace{6pt}\kern-3\p@ \hrule height 0.8pt width 0.4\columnwidth \kern 2.6\p@\vspace{2pt}}
+%脚注引用数字
+\renewcommand\thefootnote{\textcircled{\enYSFkai\fontsize{9pt}{15pt}\selectfont\arabic{footnote}}}
+%脚注字体
+\let\oldfootnotesize\footnotesize
+\renewcommand*{\footnotesize}{\oldfootnotesize\zhYSFkai\enYSFkai\fontsize{11pt}{15pt}\selectfont}
+%------------------------
+%代码
+%------------------------
+% \usepackage{minted}   % For syntax highlighting
+% \usemintedstyle{tango}
+%------------------------
+%高亮、参考文献
+%------------------------
+\newcommand{\highlight}[1]{
+	\textcolor{HighLight}{{\bfseries#1}}}
+
+\usepackage[square,numbers,sort&compress]{natbib}
+%上标引用
+\newcommand{\citess}[1]{\textsuperscript{\cite{#1}}}
+\setlength{\bibsep}{5pt plus 0.3ex}%bib条目间距
+\renewcommand\bibsection{\section*{%
+	{\zhYSFkai\enYSFkai\fontsize{12pt}{22pt}\selectfont%
+	\setlength{\baselineskip}{20pt}}}}%参考文献}}}
+\newenvironment{REF}%
+	{\begingroup
+	\zhYSFkai\enYSFkai\fontsize{12pt}{22pt}\selectfont
+	\setlength{\baselineskip}{15pt}}
+	{\endgroup}
+\renewcommand{\bibfont}{%
+	\zhYSFkai\enYSFkai\fontsize{11.5pt}{18pt}\selectfont%
+	\setlength{\baselineskip}{15pt}}
+
+% \setlength{\baselineskip}{22pt}
+%
+%% Prof. Mingming Chen's definition on subsection
+%\def\cvprsubsection{\@startsection {subsection}{2}{\z@}
+%   {11pt plus 2pt minus 2pt}{6pt} {\indent \bfseries \songti}}
+%\def\cvprssubsect#1{\cvprsubsection*{#1}}
+%\def\cvprsubsect#1{\cvprsubsection{\hskip -1em.~#1 \vspace{-0.2em}}}
+%\def\subsection{\@ifstar\cvprssubsect\cvprsubsect}
+

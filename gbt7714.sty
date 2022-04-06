@@ -1,0 +1,104 @@
+%%
+%% This is file `gbt7714.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% gbt7714.dtx  (with options: `package')
+%% 
+%% Copyright (C) 2016-2018 by Zeping Lee <zepinglee AT gmail.com>
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.2 of this license or (at your option) any later
+%% version. The latest version of this license is in:
+%% 
+%%     http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.2 or later is part of all distributions of
+%% LaTeX version 1999/12/01 or later.
+%% 
+%% This BibTeX style file is derived from `plainnat.bst' by Patrick W Daly,
+%% which was designed for use with the `natbib.sty' package.
+%% 
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{gbt7714}
+    [2018/03/09 v1.0.1 GB/T 7714-2015 BibTeX Style]
+\newif\if@gbt@numerical
+\newif\if@gbt@super
+\DeclareOption{super}{\@gbt@numericaltrue\@gbt@supertrue}
+\DeclareOption{numbers}{\@gbt@numericaltrue\@gbt@superfalse}
+\DeclareOption{authoryear}{\@gbt@numericalfalse}
+\DeclareOption*{\PassOptionsToPackage{\CurrentOption}{natbib}}
+\ExecuteOptions{super}
+\ProcessOptions\relax
+\RequirePackage{url}
+\g@addto@macro\UrlBreaks{%
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z%
+  \do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J%
+  \do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T%
+  \do\U\do\V\do\W\do\X\do\Y\do\Z%
+  \do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\0%
+}
+\if@gbt@numerical
+  \PassOptionsToPackage{sort&compress}{natbib}
+\fi
+\RequirePackage{natbib}
+\newcommand\bibstyle@super{\bibpunct{[}{]}{,}{s}{,}{\textsuperscript{,}}}
+\newcommand\bibstyle@numbers{\bibpunct{[}{]}{,}{n}{,}{,}}
+\newcommand\bibstyle@authoryear{\bibpunct{(}{)}{;}{a}{,}{,}}
+\def\tmp@numerical{numerical}
+\def\tmp@authoryear{authoryear}
+\newcommand\gbtbibstyle[1]{%
+  \def\tmp@gbt{#1}%
+  \ifx\tmp@gbt\tmp@numerical%
+    \bibliographystyle{gbt7714-unsrt}%
+  \else%
+    \ifx\tmp@gbt\tmp@authoryear%
+      \bibliographystyle{gbt7714-plain}%
+    \else%
+      \PackageError{gbt7714}{Unknown argument #1.}
+      {It should be `numerical' or `authoryear'.}
+    \fi%
+  \fi%
+}
+\if@gbt@numerical
+  \if@gbt@super
+    \citestyle{super}%
+    \gbtbibstyle{numerical}%
+  \else
+    \citestyle{numbers}
+    \gbtbibstyle{numerical}%
+  \fi
+\else
+  \citestyle{authoryear}
+  \gbtbibstyle{authoryear}%
+\fi
+\RequirePackage{etoolbox}
+\patchcmd\NAT@citexnum{%
+  \@ifnum{\NAT@ctype=\z@}{%
+    \if*#2*\else\NAT@cmt#2\fi
+  }{}%
+  \NAT@mbox{\NAT@@close}%
+}{%
+  \NAT@mbox{\NAT@@close}%
+  \@ifnum{\NAT@ctype=\z@}{%
+    \if*#2*\else\textsuperscript{#2}\fi
+  }{}%
+}{}{}
+\renewcommand\NAT@citesuper[3]{\ifNAT@swa
+  \if*#2*\else#2\NAT@spacechar\fi
+\unskip\kern\p@\textsuperscript{\NAT@@open#1\NAT@@close\if*#3*\else#3\fi}%
+   \else #1\fi\endgroup}
+\patchcmd{\NAT@citex}{%
+  \if*#2*\else\NAT@cmt#2\fi
+  \if\relax\NAT@date\relax\else\NAT@@close\fi
+}{%
+  \if\relax\NAT@date\relax\else\NAT@@close\fi
+  \if*#2*\else\textsuperscript{#2}\fi
+}{}{}
+\renewcommand\NAT@cite%
+    [3]{\ifNAT@swa\NAT@@open\if*#2*\else#2\NAT@spacechar\fi
+        #1\NAT@@close\if*#3*\else\textsuperscript{#3}\fi\else#1\fi\endgroup}

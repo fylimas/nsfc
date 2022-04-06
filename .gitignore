@@ -1,0 +1,15 @@
+# 以'#' 开始的行，被视为注释.
+*.DS_Store
+*.aux
+*.bbl
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.gz
+*.out
+*.zip
+*.log
+*.blg
+.texpadtmp/
+#  忽略所有.o 和 .a文件.
+*.[oa]
