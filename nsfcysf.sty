@@ -1,11 +1,7 @@
 % -------------------------------------------------
-% NSFC YSF LaTeX template.
-% Latest version: https://github.com/YimianDai/NSFC-LaTeX
-% Latest document: http://lowrank.science/NSFC-LaTeX/
-% Yimian Dai, Feb. 2017. Questions? yimian.dai@gmail.com ;
-%
-% Thank Prof. Mingming Chen for his pioneer work. 
-% http://bbs.ctex.org/forum.php?mod=viewthread&tid=153098&extra=page%3D1
+% NSFC 官方只有 Word 模版，民间有南开大学程明明教授的 LaTeX [模版](http://www.latexstudio.net/archives/9308)和南京航空航天大学戴一冕博士的 [iNSFC](https://github.com/YimianDai/iNSFC)模版。
+% 本 YSF 模版即修改自 2019 年的 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了。
+% 经历 3 年的使用和打磨，特别为 macOS 系统做适配，同时应同行鼓励，对windows系统做适配，这里公布出来给潜在用户做参考。
 % -------------------------------------------------
 
 %------------------------
@@ -56,13 +52,31 @@
 	]{Songti SC}
 \newfontfamily{\MACsong}[%英文
 	]{Times New Roman}
+%本机指开发者自己的macOS电脑
+%- [ ] 系统自带字体：
+%/System/Library/Fonts/
+%/Library/Fonts/
+%- [ ] 随系统更新会更换的字体：
+%/System/Library/Assets类似/com_apple_MobileAsset_Font5类似
+%-若要使用这个字体，需要及时更新MiKTeX字体配置文件~/Library/Application Support/MiKTeX/texmfs/config/fontconfig/config/localfonts2.conf文件内容
 
 %设置模版字体
+% 默认是macOS系统，使用本机自带字体
 \newcommand{\zhYSFkai}{\CJKfamily{MACkai}}
-\newcommand{\enYSFkai}{\MACkai}%{\WINkai}
+\newcommand{\enYSFkai}{\MACkai}
 %
 \newcommand{\zhYSFsong}{\CJKfamily{MACsong}}
 \newcommand{\enYSFsong}{\MACsong}
+% 如果是Windows系统，使用./fonts/中的字体
+\DeclareOption{windows}{%
+    \renewcommand{\zhYSFkai}{\CJKfamily{WINkai}}
+	\renewcommand{\enYSFkai}{\WINkai}%{\WINkai}
+	%
+	\renewcommand{\zhYSFsong}{\CJKfamily{WINsong}}
+	\renewcommand{\enYSFsong}{\WINsong}
+}
+\ProcessOptions\relax
+
 
 \setCJKsansfont[BoldFont=* Medium]{Heiti SC}
 %\setCJKfamilyfont{zhsong}[
@@ -118,7 +132,7 @@
     \par\indent\textbf{（\chinese{chapter}）}#1\par
     \vspace{0pt}
     \endgroup}
-    
+
 \newcommand\starchapter[1]{\vspace{-1em}\origchapter*{#1}\vspace{-0em}}
 
 % For the section name like 2．项目的研究内容、研究目标，以及拟解决的关键科学问题（此部分为重点阐述内容）；
@@ -220,9 +234,9 @@
 \DeclareMathSizes{14}{14}{9.8}{7}
 
 
-\usepackage{graphicx} 
+\usepackage{graphicx}
 \usepackage[subrefformat=parens,labelformat=parens]{subfig} %
-\usepackage{booktabs} 
+\usepackage{booktabs}
 % \usepackage[citebordercolor = white]{hyperref}
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}%须在hyperref后边
@@ -248,7 +262,7 @@
 %\newcommand*{\circled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)%
 %    circle (.5em) node {\makebox[1em][c]{\small #1}};}}
 %\robustify{\circled}
-%\begin{enumerate}[label=\circled{\arabic*}]	
+%\begin{enumerate}[label=\circled{\arabic*}]
 %\end{enumerate}
 
 \font\symWingdings = "Wingdings"%
