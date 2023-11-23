@@ -67,7 +67,8 @@
 %
 \newcommand{\zhYSFsong}{\CJKfamily{MACsong}}
 \newcommand{\enYSFsong}{\MACsong}
-% 如果是Windows系统，使用./fonts/中的字体
+% 如果是Windows系统，或者如果你编译中发现缺少字体，可以选择使用./fonts/中的字体
+%即在主tex文件中，使用\usepackage[windows]{nsfcysf}
 \DeclareOption{windows}{%
     \renewcommand{\zhYSFkai}{\CJKfamily{WINkai}}
 	\renewcommand{\enYSFkai}{\WINkai}%{\WINkai}
@@ -76,7 +77,8 @@
 	\renewcommand{\enYSFsong}{\WINsong}
 }
 \ProcessOptions\relax
-
+%查看本机字体的方式
+%打开程序“字体册.app”，看看本机都有什么字体，修改成对应的字体名称即可。
 
 \setCJKsansfont[BoldFont=* Medium]{Heiti SC}
 %\setCJKfamilyfont{zhsong}[
