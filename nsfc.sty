@@ -1,6 +1,6 @@
 % -------------------------------------------------
 % NSFC 官方只有 Word 模版，民间有南开大学程明明教授的 LaTeX [模版](http://www.latexstudio.net/archives/9308)和南京航空航天大学戴一冕博士的 [iNSFC](https://github.com/YimianDai/iNSFC)模版。
-% 本 YSF 模版即修改自 2019 年的 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了。
+% 本模版即修改自 2019 年的 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了【2024年又进行了更新】。
 % 经历 3 年的使用和打磨，特别为 macOS 系统做适配，同时应同行鼓励，对windows系统做适配，这里公布出来给潜在用户做参考。
 % -------------------------------------------------
 
@@ -8,7 +8,8 @@
 %xeCJK包的命令
 %------------------------
 %特殊符号的宽度
-\xeCJKsetwidth{，。；}{0.7em}%符号宽度，可添加‘’“”
+\xeCJKsetwidth{、，。；}{1.08em}%符号宽度，可添加‘’“”
+\xeCJKsetwidth{（）}{1em}%符号宽度，可添加‘’“”
 \xeCJKsetup{%中英文间空格的宽度
 	CJKecglue = \hspace{0.3em},}
 
@@ -21,6 +22,7 @@
 	Path=./fonts/,
 	AutoFakeSlant=0.3,
 	AutoFakeBold=3,
+	Scale = 0.98%微调字体胖瘦
 	]{Kaiti.ttf}
 \newfontfamily{\WINkai}[%英文
 	Path=./fonts/,
@@ -41,6 +43,7 @@
 \setCJKfamilyfont{MACkai}[%中文
 	BoldFont = * Black,%
 	AutoFakeSlant=0.3,
+	Scale = 0.97%微调字体胖瘦
 	]{Kaiti SC}
 \newfontfamily{\MACkai}[%英文
 	]{Cambria}
@@ -62,19 +65,19 @@
 
 %设置模版字体
 % 默认是macOS系统，使用本机自带字体
-\newcommand{\zhYSFkai}{\CJKfamily{MACkai}}
-\newcommand{\enYSFkai}{\MACkai}
+\newcommand{\zhkai}{\CJKfamily{MACkai}}
+\newcommand{\enkai}{\MACkai}
 %
-\newcommand{\zhYSFsong}{\CJKfamily{MACsong}}
-\newcommand{\enYSFsong}{\MACsong}
+\newcommand{\zhsong}{\CJKfamily{MACsong}}
+\newcommand{\ensong}{\MACsong}
 % 如果是Windows系统，或者如果你编译中发现缺少字体，可以选择使用./fonts/中的字体
-%即在主tex文件中，使用\usepackage[windows]{nsfcysf}
+%即在主tex文件中，使用\usepackage[windows]{nsfc}
 \DeclareOption{windows}{%
-    \renewcommand{\zhYSFkai}{\CJKfamily{WINkai}}
-	\renewcommand{\enYSFkai}{\WINkai}%{\WINkai}
+    \renewcommand{\zhkai}{\CJKfamily{WINkai}}
+	\renewcommand{\enkai}{\WINkai}%{\WINkai}
 	%
-	\renewcommand{\zhYSFsong}{\CJKfamily{WINsong}}
-	\renewcommand{\enYSFsong}{\WINsong}
+	\renewcommand{\zhsong}{\CJKfamily{WINsong}}
+	\renewcommand{\ensong}{\WINsong}
 }
 \ProcessOptions\relax
 %查看本机字体的方式
@@ -129,7 +132,7 @@
 \newcommand\nostarchapter[1]{%
     \begingroup
     \vspace{6pt}\stepcounter{chapter}
-    \color{YSFblue}\zhYSFkai\enYSFkai\fontsize{14pt}{22pt}\selectfont%
+    \color{YSFblue}\zhkai\enkai\fontsize{14pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent\textbf{（\chinese{chapter}）}#1\par
     \vspace{0pt}
@@ -144,7 +147,7 @@
     \begingroup
 %     \vspace{0pt}
     \stepcounter{section}
-    \color{YSFblue}\zhYSFkai\enYSFkai\fontsize{14pt}{22pt}\selectfont%
+    \color{YSFblue}\zhkai\enkai\fontsize{14pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent\arabic{section}．#1\par
 % \vspace{11pt}
@@ -163,7 +166,7 @@
     \begingroup\color{HighLight}
     \vspace{6pt}
     \stepcounter{subsection}
-    \zhYSFkai\enYSFkai\fontsize{13pt}{22pt}\selectfont\bfseries%
+    \zhkai\enkai\fontsize{13pt}{22pt}\selectfont\bfseries%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\noindent\arabic{section}.\arabic{subsection}#1\par
     \vspace{2pt}
@@ -173,7 +176,7 @@
     \begingroup\color{HighLight}
     \vspace{6pt}
     %\stepcounter{subsection}
-    \zhYSFkai\enYSFkai\fontsize{13pt}{22pt}\selectfont\bfseries%
+    \zhkai\enkai\fontsize{13pt}{22pt}\selectfont\bfseries%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
 %    \par\noindent\arabic{section}.\arabic{subsection}#1\par
     \par\noindent#1\par
@@ -189,7 +192,7 @@
     \begingroup\color{HighLight}
 %     \vspace{0pt}
     \stepcounter{subsubsection}
-    \zhYSFkai\enYSFkai\fontsize{13pt}{22pt}\selectfont%
+    \zhkai\enkai\fontsize{13pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent（\arabic{subsubsection}）#1\par
 % \vspace{11pt}
@@ -198,7 +201,7 @@
     \begingroup\color{HighLight}
 	\vspace{2pt}
     \stepcounter{subsubsection}
-    \zhYSFkai\enYSFkai\fontsize{12.5pt}{22pt}\selectfont%
+    \zhkai\enkai\fontsize{12.5pt}{22pt}\selectfont%
     \setlength{\baselineskip}{20pt}%最后设置，防止被fontsize中的覆盖
     \par\indent#1\par
     %\vspace{-1pt}
@@ -207,8 +210,8 @@
 %正文段落
 %------------------------
 \newenvironment{MS}%
-	{%\begingroup\zhYSFsong\enYSFsong\fontsize{12.5pt}{22pt}\selectfont%
-	\begingroup\zhYSFkai\enYSFkai\fontsize{12.5pt}{23pt}\selectfont%
+	{%\begingroup\zhsong\ensong\fontsize{12.5pt}{22pt}\selectfont%
+	\begingroup\zhkai\enkai\fontsize{12.5pt}{23pt}\selectfont%
 	\setlength{\baselineskip}{22.1pt}}
 	{\endgroup}
 
@@ -246,8 +249,8 @@
 \crefformat{figure}{图~#2#1#3}
 \crefformat{equation}{式~（#2#1#3）}
 \usepackage[figurewithin=none]{caption}
-\DeclareCaptionFont{capfont}{\zhYSFkai\enYSFkai\fontsize{11pt}{22pt}\selectfont\bfseries} % Caption font
-\DeclareCaptionFont{subfont}{\zhYSFkai\enYSFkai\fontsize{11pt}{22pt}\selectfont\bfseries} % Sub-caption font
+\DeclareCaptionFont{capfont}{\zhkai\enkai\fontsize{11pt}{22pt}\selectfont\bfseries} % Caption font
+\DeclareCaptionFont{subfont}{\zhkai\enkai\fontsize{11pt}{22pt}\selectfont\bfseries} % Sub-caption font
 \captionsetup{font = capfont}
 \captionsetup[subfigure]{font = subfont}
 \captionsetup[figure]{labelsep=period}
@@ -280,10 +283,10 @@
 \@footindent=1em
 \renewcommand\footnoterule{\vspace{6pt}\kern-3\p@ \hrule height 0.8pt width 0.4\columnwidth \kern 2.6\p@\vspace{2pt}}
 %脚注引用数字
-\renewcommand\thefootnote{\textcircled{\enYSFkai\fontsize{9pt}{15pt}\selectfont\arabic{footnote}}}
+\renewcommand\thefootnote{\textcircled{\enkai\fontsize{9pt}{15pt}\selectfont\arabic{footnote}}}
 %脚注字体
 \let\oldfootnotesize\footnotesize
-\renewcommand*{\footnotesize}{\oldfootnotesize\zhYSFkai\enYSFkai\fontsize{11pt}{15pt}\selectfont}
+\renewcommand*{\footnotesize}{\oldfootnotesize\zhkai\enkai\fontsize{11pt}{15pt}\selectfont}
 %------------------------
 %代码
 %------------------------
@@ -300,15 +303,15 @@
 \newcommand{\citess}[1]{\textsuperscript{\cite{#1}}}
 \setlength{\bibsep}{5pt plus 0.3ex}%bib条目间距
 \renewcommand\bibsection{\section*{%
-	{\zhYSFkai\enYSFkai\fontsize{12pt}{22pt}\selectfont%
+	{\zhkai\enkai\fontsize{12pt}{22pt}\selectfont%
 	\setlength{\baselineskip}{20pt}}}}%参考文献}}}
 \newenvironment{REF}%
 	{\begingroup
-	\zhYSFkai\enYSFkai\fontsize{12pt}{22pt}\selectfont
+	\zhkai\enkai\fontsize{12pt}{22pt}\selectfont
 	\setlength{\baselineskip}{15pt}}
 	{\endgroup}
 \renewcommand{\bibfont}{%
-	\zhYSFkai\enYSFkai\fontsize{11.5pt}{18pt}\selectfont%
+	\zhkai\enkai\fontsize{11.5pt}{18pt}\selectfont%
 	\setlength{\baselineskip}{15pt}}
 
 % \setlength{\baselineskip}{22pt}
@@ -319,4 +322,14 @@
 %\def\cvprssubsect#1{\cvprsubsection*{#1}}
 %\def\cvprsubsect#1{\cvprsubsection{\hskip -1em.~#1 \vspace{-0.2em}}}
 %\def\subsection{\@ifstar\cvprssubsect\cvprsubsect}
+
+%------------------------
+%微调部分文字中字体的胖瘦
+%------------------------
+\newcommand{\ps}[2][0.95]{\scalebox{#1}[1]{#2}}%#1默认取0.95等
+\newcommand{\kg}[1]{\kern#1}%-0.1em
+
+%\excludecomment{MS}%用来对比模版有无变化
+%或者下边这种方法
+\renewcommand{\input}[1]{\vspace{\baselineskip}}%用来对比模版有无变化
 
