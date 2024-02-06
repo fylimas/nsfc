@@ -5,6 +5,9 @@
 %macOS用户独享
 %\documentclass[UTF8, punct, oneside]{ctexbook}
 %\usepackage{nsfc}
+%用来对比模版有无变化，正常使用时，请注释掉
+\renewcommand{\input}[1]{\vspace{\baselineskip}}
+%如果你个人文件和文件夹以⚠︎开头进行命名，可以省心更新模版。参见README.md
 
 \pagestyle{empty} % 第二页以后页码空白
 \usepackage[a4paper, left = 3.2cm, right = 3.2cm, top = 2.54cm, bottom = 2.54cm]{geometry}%页边距
