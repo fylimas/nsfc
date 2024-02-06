@@ -36,9 +36,10 @@ macOS用户还可以使用本机自带的字体，在`xx正文.tex`使用以下�
 
 1. 每年模版的文字虽然大差不差，保不齐会有略微改动，请仔细对照文字是否有改动，有的话可提issues，发邮件`fylimas@mail.ustc.edu.cn`，发微信`fylimas`；
 
+   <img src="./figures/wechatgroup.JPG" alt="Image" width="166">
+
 2. 本人及好友使用过程中未出现格式审查错误，但并不保证未来情况，请自行决定是否使用（狗头保命）。
 
-   
    
 
 ## 保持最新
@@ -49,4 +50,4 @@ macOS用户还可以使用本机自带的字体，在`xx正文.tex`使用以下�
 
 方法2: 利用`.gitignore`机制。其中以`⚠︎`和`⚠︎*/*`，即以⚠︎开头的文件、文件夹均被`git`忽略，所以你个人文件和文件夹只需要以⚠︎开头进行命名即可。`git`下到的文件也不可能覆盖你的⚠︎开头文件和文件夹。
 
-注意：本github仓库为主仓库(https://github.com/fylimas/nsfc)，gitee仓库(https://gitee.com/fylimas/nsfc)是镜像，方便不可靠网络环境下的访问。
+注意：本github仓库为主仓库[https://github.com/fylimas/nsfc](https://github.com/fylimas/nsfc)，gitee仓库[https://gitee.com/fylimas/nsfc](https://gitee.com/fylimas/nsfc)是镜像，方便不可靠网络环境下的访问。
