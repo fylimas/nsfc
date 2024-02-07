@@ -34,7 +34,7 @@ macOS用户还可以使用本机自带的字体，在`xx正文.tex`使用以下�
 
 免责声明（狗头保命）：
 
-1. 每年模版的文字虽然大差不差，保不齐会有略微改动，请仔细对照文字是否有改动，有的话可提issues，发邮件`fylimas@mail.ustc.edu.cn`，发微信`fylimas`；
+1. 每年模版的文字虽然大差不差，保不齐会有略微改动，请仔细对照文字是否有改动，有的话可提issues，或者进群；
 
    <img src="./figures/wechatgroup.JPG" alt="Image" width="166">
 
