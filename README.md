@@ -1,9 +1,10 @@
 # nsfc- 国家自然基金项目(青年+面上) LaTeX 模板
 
-NSFC 官方只有 Word 模版，民间有南开大学程明明教授的 LaTeX [模版](http://www.latexstudio.net/archives/9308)和南京航空航天大学戴一冕博士的 [iNSFC](https://github.com/YimianDai/iNSFC)模版。
+NSFC 官方只有 Word 模版。2019年时，民间有南开大学程明明教授的 LaTeX [模版](http://www.latexstudio.net/archives/9308)和南京航空航天大学戴一冕博士的 [iNSFC](https://github.com/YimianDai/iNSFC)模版。
 
-本 YSF 模版即修改自 2019 年的 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了【2024年重启更新】。
-经历 4 年的使用和打磨，特别为 macOS 系统做适配，同时应同行鼓励，也对windows系统做适配，这里公布出来给潜在用户做参考。
+本模版的制作，始于 2019 年对 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了【2024年重启更新】。这期间，热心老师也制作了不少其他模版，包括：[Ruzim](https://github.com/Ruzim/NSFC-application-template-latex)、[Readon](https://github.com/Readon/NSFC-application-template-latex)、[huangwb8](https://github.com/huangwb8/ChineseResearchLaTeX)等。
+
+本模版经历 4 年的使用和打磨，特别为 macOS 系统做适配，同时应同行鼓励，也对windows系统做适配，这里公布出来给潜在用户做参考。
 
 ## 使用方法
 
