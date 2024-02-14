@@ -1,10 +1,13 @@
 %!TEX program = xelatex
-%macOS用户
-\documentclass[UTF8, punct,fontset=mac,oneside]{ctexbook}
-\usepackage{nsfcysf}
-%windows用户
-%\documentclass[UTF8, punct,fontset=windows,oneside]{ctexbook}
-%\usepackage[windows]{nsfcysf}
+%windows、macOS用户都可用
+\documentclass[UTF8, punct, oneside]{ctexbook}
+\usepackage[windows]{nsfc}
+%macOS用户独享
+%\documentclass[UTF8, punct, oneside]{ctexbook}
+%\usepackage{nsfc}
+%用来对比模版有无变化，正常使用时，请注释掉
+\renewcommand{\input}[1]{\vspace{\baselineskip}}
+%如果你个人文件和文件夹以⚠︎开头进行命名，可以省心更新模版。参见README.md
 
 \pagestyle{empty} % 第二页以后页码空白
 \usepackage[a4paper, left = 3.2cm, right = 3.2cm, top = 2.54cm, bottom = 2.54cm]{geometry}%页边距
@@ -19,13 +22,13 @@
 \begin{document}
 %\thispagestyle{empty} 　　　% 首页页码空白
 
-{\centering\zhYSFkai\fontsize{16pt}{21pt}\selectfont
+{\centering\zhkai\fontsize{16pt}{21pt}\selectfont
 \setlength{\baselineskip}{21pt}%最后设置，防止被fontsize中的覆盖
 \textbf{报告正文}\par
 \vspace{5.46pt}}%0.2(行距倍数)*21(行距)*1.3(word)
 
 %\begin{comment}
-{\zhYSFkai\fontsize{14pt}{22pt}\selectfont
+{\zhkai\fontsize{14pt}{22pt}\selectfont
  \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
 参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。
 \textbf{\color{YSFblue}请勿删除或改动下述提纲标题及括号中的文字。}\par
