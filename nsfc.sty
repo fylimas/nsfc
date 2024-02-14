@@ -17,6 +17,7 @@
 \usepackage{fontspec}
 %注意，只有字体本身有粗斜体，或都是粗体斜体都是fake的，才能输出粗斜体
 
+\DeclareOption{windows}{%windows
 %微软楷体字
 \setCJKfamilyfont{WINkai}[%中文
 	Path=./fonts/,
@@ -38,7 +39,17 @@
 \newfontfamily{\WINsong}[%英文
 	Path=./fonts/,
 	]{SimSun.ttf}
+\newfontfamily\wingdingsfont{Wingdings.ttf}[Path=./fonts/]
 
+%设置模版字体
+\newcommand{\zhkai}{\CJKfamily{WINkai}}
+\newcommand{\enkai}{\WINkai}
+%
+\newcommand{\zhsong}{\CJKfamily{WINsong}}
+\newcommand{\ensong}{\WINsong}
+}
+
+\DeclareOption{macos}{%macos
 %本机楷体
 \setCJKfamilyfont{MACkai}[%中文
 	BoldFont = * Black,%
@@ -55,6 +66,7 @@
 	]{Songti SC}
 \newfontfamily{\MACsong}[%英文
 	]{Times New Roman}
+\font\symWingdings = "Wingdings"%
 %本机指开发者自己的macOS电脑
 %- [ ] 系统自带字体：
 %/System/Library/Fonts/
@@ -62,7 +74,6 @@
 %- [ ] 随系统更新会更换的字体：
 %/System/Library/Assets类似/com_apple_MobileAsset_Font5类似
 %-若要使用这个字体，需要及时更新MiKTeX字体配置文件~/Library/Application Support/MiKTeX/texmfs/config/fontconfig/config/localfonts2.conf文件内容
-
 %设置模版字体
 % 默认是macOS系统，使用本机自带字体
 \newcommand{\zhkai}{\CJKfamily{MACkai}}
@@ -70,28 +81,18 @@
 %
 \newcommand{\zhsong}{\CJKfamily{MACsong}}
 \newcommand{\ensong}{\MACsong}
-% 如果是Windows系统，或者如果你编译中发现缺少字体，可以选择使用./fonts/中的字体
-%即在主tex文件中，使用\usepackage[windows]{nsfc}
-\DeclareOption{windows}{%
-    \renewcommand{\zhkai}{\CJKfamily{WINkai}}
-	\renewcommand{\enkai}{\WINkai}%{\WINkai}
-	%
-	\renewcommand{\zhsong}{\CJKfamily{WINsong}}
-	\renewcommand{\ensong}{\WINsong}
 }
+
 \ProcessOptions\relax
 %查看本机字体的方式
 %打开程序“字体册.app”，看看本机都有什么字体，修改成对应的字体名称即可。
 
-\setCJKsansfont[BoldFont=* Medium]{Heiti SC}
+%\setCJKsansfont[BoldFont=* Medium]{Heiti SC}
 %\setCJKfamilyfont{zhsong}[
 %        UprightFont = * Light,
 %           BoldFont = * Bold,
 %]{Songti SC}
 %\setCJKfamilyfont{zhhei}[BoldFont=* Medium]{Heiti SC}
-
-
-
 
 %\setCJKmainfont[
 %	Path=./fonts/,%系统自带Songti SC
@@ -153,8 +154,6 @@
 % \vspace{11pt}
     \endgroup}
 \newcommand\starsection[1]{\origsection*{#1}}
-
-
 
 
 %------------------------
@@ -270,7 +269,6 @@
 %\begin{enumerate}[label=\circled{\arabic*}]
 %\end{enumerate}
 
-\font\symWingdings = "Wingdings"%
 \renewcommand{\labelitemi}{\color{HighLight}\symWingdings\XeTeXglyph153}%第一层
 
 
