@@ -2,7 +2,7 @@
 
 NSFC 官方只有 Word 模版。2019年时，民间有南开大学程明明教授的 LaTeX [模版](http://www.latexstudio.net/archives/9308)和南京航空航天大学戴一冕博士的 [iNSFC](https://github.com/YimianDai/iNSFC)模版。
 
-本模版的制作，始于 2019 年对 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了【2024年重启更新】。这期间，热心老师也制作了不少其他模版，包括：[Ruzim](https://github.com/Ruzim/NSFC-application-template-latex)、[Readon](https://github.com/Readon/NSFC-application-template-latex)、[huangwb8](https://github.com/huangwb8/ChineseResearchLaTeX)等。
+本模版的制作，始于 2019 年的 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了【2024年重启更新】。这期间，热心老师也制作了不少其他模版，包括：[Ruzim](https://github.com/Ruzim/NSFC-application-template-latex)、[Readon](https://github.com/Readon/NSFC-application-template-latex)、[huangwb8](https://github.com/huangwb8/ChineseResearchLaTeX)等。
 
 本模版经历 4 年的使用和打磨，特别为 macOS 系统做适配，同时应同行鼓励，也对windows系统做适配，这里公布出来给潜在用户做参考。
 
@@ -21,12 +21,12 @@ macOS用户还可以使用本机自带的字体，在`xx正文.tex`使用以下�
 ```latex
 %macOS用户独享
 \documentclass[UTF8, punct, oneside]{ctexbook}
-\usepackage{nsfc}
+\usepackage[macos]{nsfc}
 ```
 
 ## 核对与官方区别
 
-为了方便大家对比本模版和官方模版编译效果的区别，可以使用下述设置：
+为了方便大家对比本模版编译后效果和官方word模版的区别，可以使用下述设置：
 
 ```latex
 %用来对比模版有无变化，正常使用时，请注释掉
