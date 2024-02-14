@@ -39,7 +39,7 @@ macOS用户还可以使用本机自带的字体，在`xx正文.tex`使用以下�
 
    ![](./figures/wechatgroup.jpg)
 
-   <img src="./figures/wechatgroup.jpg" alt="Image" width="166">
+   <img src="./figures/wechatgroup.JPG" alt="Image" width="166">
 
 2. 本人及好友使用过程中未出现格式审查错误，但并不保证未来情况，请自行决定是否使用（狗头保命）。
 
