@@ -1,4 +1,4 @@
-# nsfc- 国家自然基金项目(青年+面上) LaTeX 模板
+# nsfc- 国家自然基金项目(面、青、地) LaTeX 模板
 
 NSFC 官方只有 Word 模版。2019年时，民间有南开大学程明明教授的 LaTeX [模版](http://www.latexstudio.net/archives/9308)和南京航空航天大学戴一冕博士的 [iNSFC](https://github.com/YimianDai/iNSFC)模版。
 
