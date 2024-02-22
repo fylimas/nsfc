@@ -1,7 +1,89 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  在原版本胡海星(南京大学计算机科学与技术系)2017，Jiawei Chen, XDU，2017的基础上
 %  进行了持续的更新。具体修改只能找源文件diff了。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%顺序编码制文后参考文献表著录格式示例
+%（ＧＢ／Ｔ７７１４－２００５）
+%1． 普通图书
+%[1]广西壮族自治区林业厅．广西自然保护[M]．北京：中国林业出版社，1993．
+%[2]蒋有绪，郭泉水，马娟，等．中国森林群落分类及其群落学特征[M]．北京：科学出版社，1998．
+%[3]唐绪军．报业经济与报业经营[M]．北京：新华出版社，1999：117-121．
+%[4]赵凯华，罗蔚茵．新概念物理教程：力学[M]．北京：高等教育出版社，1995．
+%[5]汪昂．（增补）本草备要[M]．石印本．上海：同文书局，1912．
+%[6]CRA WFPRD W，GORMAN M． Future l： braries：dreams， madness，& reality[M]．Chicago：American Library Association， 1995．
+%[7]International Federation of Library Association and Institutions． Names of persons: national usages for entry in catalogues[M]．3rd ed． London:：IFLA In International Office for UBC， 1977．
+%[8]O’BRIEN J A． Introduction to information systems [M]． 7th ed．Burr Ridge，III．： Irwin，1994．
+%[9]ROOD H J．Logic and structured design for computer programmers[M]．3rd ed． [S．l．]： Brooks/Cole Thomson Learning,，2001．
+%
+%2． 论文集、会议录
+%[1]中国力学学会．第3届全国实验流体力学学术会议论文集[C]．天津：[出版者不祥]，1990．
+%[2]ROSENTHALL E M．Proceedings of the Fifth Canadian Mathematical Congress， University of Montreal， 1961[C]． Toronto： University of Toronto Press，1963．
+%[3]GANZHA V G， MAYR E W， VOROZHTSOV EV． Computer algebra in scientific computing： CASC 2000： proceedings of the Third Workshop on Computer Algebra in Scientific Computing,，Samarkand， October 5-9，2000[C].．Berlin： Springer， c2000．
+%
+%3． 科技报告
+%[1]U．S． Department of Transportation Federal　Highway Administration． Guidelines for handling excavated acid-producing materials，PB 91-19400[R]．Springfield： U．S．Department of Commerce National Information Service，1990．
+%[2]World Health Organization．Factors regulating the immune response： report of WHO Scientific Group[R]． Geneva：WHO，1970．
+%
+%4． 学位论文
+%[1]张志祥．间断动力系统的随机扰动及其在守恒律方程中的应用[D]．北京：北京大学数学学院，1998．
+%[2]CALMS R B.Infrared spectroscopic studies on solid oxygen[D]． Berkeley：Univ． of California，1965．
+%
+%5． 专利文献
+%[1]刘加林．多功能一次性压舌板：中国，92214985．2[P]．1993-04-14．
+%[2]河北绿洲生态环境科技有限公司．一种荒漠化地区生态植被综合培植方法：中国，01129210．5[P/OL]．2001-10-24[2002-05-28]．http：//211．152．9．47/sipoasp/zlijs/hyjs-yx-new，asp? recid=01129210．5&leixin．
+%[3]KOSEKI A，MOMOSE H，KAWAHITO M，et．al．Compiler：US， 828402[P/OL]．2002-05-25[2002-05-28]．http://FF&p=1&u=netahtml/PTO/search-bool．htm1&r=5&f=G&1=50&col=AND&d=PG01&sl=IBM．AS．&0S=AN/IBM&RS=AN/IBM．
+%
+%6． 专著中析出的文献
+%[1]国家标准局信息分类编码研究所．GB/T2659-1986世界各国和地区名称代码[S]//全国文献工作标准化技术委员会．文献工作国家标准汇编：3．北京：中国标准出版社，1988：59-92．
+%[2]韩吉人．论职工教育的特点[G]//中国职工教育研究会．职工教育研究论文集．北京：人民教育出版社，1985：90-99．
+%[3]BUSECK P R，NORD G L， Jr.， VEBLEN D R． Subsolidus phenomena in pyroxenes[M]//PREWITT C T． Pyroxense.．Washington，D．C．： Mineralogical Society of America,，cl1980：117-211．
+%[4]FOURNEY M E． Advances in holographic photoelasticity[C]//　American Society of Mechanical Engineers． Applied Mechanics Division． Symposium on Applications of Holography in Mechanics， August 23-25，1971， University of Southern California， Los Angeles， Califonia， New York： ASME， c1971：17-38．
+%[5]MARTIN G． Control of electronic resources in Australia [M]　//PATTLE Ｌ　W， COX B J． Electronic resources： selection and bibliographic control． New York： The Haworth Press，1996：85-96．
+%
+%7． 期刊中析出的文献
+%[1]李炳穆．理想的图书馆员和信息专家的素质与形象[J]．图书情报工作，2000（2）：5-8．
+%[2]陶仁骥．密码学与数学[J]．自然杂志，1984，7（7）：527．
+%[3]亚洲地质图编目组．亚洲地层与地质历史概述[J]．地质学报，1978，3：194-208．
+%[4]DES MARAIS D J， STRAUSS H， SUMMONS R E， et al． Carbon isotope evidence for the stepwise oxidation of the Proterozoic environment[J]． Nature， 1992，359：605-609．
+%[5]HEWITT J A．Technical services in 1983[J]．Library Resource Services， 1984，28(3)：205-218．
+%
+%8． 报纸中析出的文献
+%[1]丁文祥．数字革命与竞争国际化[N]．中国青年报，2000-11-20（15）．
+%[2]张田勤．罪犯DNA库与生命伦理学计划[N]．大众科技报．2000-11-12（7）．
+%
+%9． 电子文献（包括专著或连续出版物中析出的电子文献）
+%[1]江向东．互联网环境下的信息处理与图书管理系统解决方案[J／OL]．情报学报，1999，18（2）：4[2000-01-18]．http://www.chinainfo.gov.cn/periodical/qbxb/qbxb99/qbxb990203．
+%[2]萧钰．出版业信息化迈入快车道[EB/OL]．（2001-12-19）[2002-04-15]http：//www．Creader．com.news/20011219/200112190019．Html．
+%[3]CHRISTINE M．Plant physiology：plant　biology in the Genome Era[J/OL]．Science， 1998，281：331-332[1988-09-23]．http：//www．Sciencemag．org/cgi/collection/anatmorp．
+%[4]METCALF S W.．The Tort Hall air emission study[C/OL]//The International Congress on Hazardous Waste，Atlanta Marriott Marquis Hotel， Atlanta， Georgia，June 5-8， 1995：impact on human and ecological health [1998-09-22]．http：// atsdrl．Atsdr．cdc． Gov：8080/cong95．Html．
+%[5]TURCOTTE D L．Fractals and chaos in geology and geophysisce [M/OL]．New York: Cambridge University Press，1992[1998-09-23]．http：//www．Seg．org/reviews/mccorm 30．Html．
+%
+%文献类型和电子文献载体标志代码
+%1． 文献类型和标志代码（见表1）
+%表1： 文献类型和标志代码
+%文献类型--标志代码
+%普通图书M
+%会议录C
+%汇编G
+%报纸N
+%期刊J
+%学位论文D
+%报告R
+%标准S
+%专利P
+%数据库DB
+%计算机程序CP
+%电子公告EB
+%
+%2． 电子文献载体和标志代码（见表２）
+%表2： 电子文献载体和标志代码
+%载体类型--标志代码
+%磁带（magnetic tape）MT
+%磁盘（disk）DK
+%光盘（CD-ROM）CD
+%联机网络（online）OL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
                                                   %
 ENTRY                                             % class Entry {
 {                                                 % public:
