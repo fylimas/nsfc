@@ -1,14 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  在原版本的基础上将姓名从全部字母大写，改为首字母大写。
-%  Modified by: Jiawei Chen, XDU, Feb, 2017.
-%  原版本：
-% 
-%  符合 GB/T 7714-2005 规范的 BibTeX 样式文件
-%
-%  作者：    胡海星   南京大学计算机科学与技术系
-%  版本：    v2.1.0  2014年12月18日
-%  项目主页: http://haixing-hu.github.io/nju-thesis/
-%
+%  在原版本胡海星(南京大学计算机科学与技术系)2017，Jiawei Chen, XDU，2017的基础上
+%  进行了持续的更新。具体修改只能找源文件diff了。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                                   %
 ENTRY                                             % class Entry {
@@ -34,7 +26,7 @@ ENTRY                                             % class Entry {
   series                                          %   String series;
   volume                                          %   String volume;
   number                                          %   String number;
-  version					  %   String version;
+  version                                         %   String version;
   month                                           %   String month;
   school                                          %   String school;
   institution                                     %   String institution;
@@ -604,7 +596,7 @@ FUNCTION {format.names} {                         % String Entry::format_names(S
     remove.dots 'jrname :=                        %     jrname = remove_dots(tmp);
     namelist nameindex "{f}" format.name$         %     tmp = format_name(namelist, nameindex, "{f}");
     remove.dots                                   %     tmp = remove_dots(tmp);
-    %"u" change.case$ 'firstname :=  
+    %"u" change.case$ 'firstname :=
     'firstname :=                                 %     firstname = change_case(tmp, "u");
     namelist nameindex "{ll}" format.name$        %     tmp = format_name(namelist, nameindex, "{ll}");
     %"u" change.case$ 'lastname :=                 %     lastname = change_case(tmp, "u");
@@ -1634,6 +1626,7 @@ FUNCTION {online} {                               % void Entry::online() {
   } if$                                           %   }
   false output.modifydate                         %   output_modifydate(false);
   true output.citedate                            %   output_citedate(true);
+  true output.url.or.doi                          %   output_url_or_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
