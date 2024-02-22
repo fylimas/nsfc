@@ -1815,6 +1815,35 @@ FUNCTION {inproceedings} {                        % void Entry::inproceedings() 
 }                                                 % }
                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+FUNCTION {misc.impl} {                            % void Entry::misc_impl() {
+  start.bibitem                                   %   start_bibitem();
+  true output.author.or.editor                    %   output_author_or_editor(true);
+  true output.title                               %   output_title(true);
+  true output.mark                                %   output_mark(true);
+  false output.translator                         %   output_translator(false);
+  false output.edition                            %   output_edition(false);
+  publisher empty$ not {                          %   if (! empty(this.publisher)) {
+    true output.address                           %     output_address(true);
+    true output.publisher                         %     output_publisher(true);
+    cap.comma write$                              %     write(cap_comma);
+  } {                                             %   } else {
+    cap.period write$                             %     write(cap_period);
+  } if$                                           %   }
+  true output.year                                %   output_year(true);
+  false output.pages                              %   output_pages(false);
+  false output.citedate                           %   output_citedate(false);
+  false output.url.or.doi                         %   output_url_or_doi(false);
+  end.bibitem                                     %   end_bibitem();
+}                                                 % }
+                                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                                  %
+FUNCTION {misc} {                                 % void Entry::misc() {
+  "Z" set.mark                                    %   set_mark("Z");
+  misc.impl                                       %   misc_impl();
+}                                                 % }
+                                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                                   %
 FUNCTION {article} {                              % void Entry::article() {
   "J" set.mark                                    %   set_mark("J");
