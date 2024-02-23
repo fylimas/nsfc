@@ -29,7 +29,7 @@
 	Path=./fonts/,
 	AutoFakeSlant=0.3,
 	AutoFakeBold=3,
-	]{TimesNewRoman.ttf}
+	]{Kaiti.ttf}
 %微软宋体
 \setCJKfamilyfont{WINsong}[%中文
 	Path=./fonts/,
@@ -38,7 +38,7 @@
 	]{SimSun.ttf}
 \newfontfamily{\WINsong}[%英文
 	Path=./fonts/,
-	]{SimSun.ttf}
+	]{TimesNewRoman.ttf}
 \newfontfamily\wingdingsfont{Wingdings.ttf}[Path=./fonts/]
 
 %设置模版字体
@@ -65,7 +65,7 @@
 	AutoFakeSlant=0.3,
 	]{Songti SC}
 \newfontfamily{\MACsong}[%英文
-	]{Times New Roman}
+	]{Cambria}%Times New Roman
 \font\symWingdings = "Wingdings"%
 %本机指开发者自己的macOS电脑
 %- [ ] 系统自带字体：
@@ -210,7 +210,7 @@
 %------------------------
 \newenvironment{MS}%
 	{%\begingroup\zhsong\ensong\fontsize{12.5pt}{22pt}\selectfont%
-	\begingroup\zhkai\enkai\fontsize{12.5pt}{23pt}\selectfont%
+	\begingroup\zhkai\ensong\fontsize{12.5pt}{23pt}\selectfont%
 	\setlength{\baselineskip}{22.1pt}}
 	{\endgroup}
 
@@ -306,11 +306,11 @@
 	\setlength{\baselineskip}{20pt}}}}%参考文献}}}
 \newenvironment{REF}%
 	{\begingroup
-	\zhkai\enkai\fontsize{12pt}{22pt}\selectfont
+	\zhkai\ensong\fontsize{12pt}{22pt}\selectfont
 	\setlength{\baselineskip}{15pt}}
 	{\endgroup}
 \renewcommand{\bibfont}{%
-	\zhkai\enkai\fontsize{11.5pt}{18pt}\selectfont%
+	\zhkai\ensong\fontsize{11.5pt}{18pt}\selectfont%
 	\setlength{\baselineskip}{15pt}}
 
 % \setlength{\baselineskip}{22pt}
