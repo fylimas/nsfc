@@ -4,17 +4,19 @@ NSFC 官方只有 Word 模版。2019年时，民间有南开大学程明明教�
 
 本模版的制作，始于 2019 年的 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了【2024年重启更新】。这期间，热心老师也制作了不少其他模版，包括：[Ruzim](https://github.com/Ruzim/NSFC-application-template-latex)、[Readon](https://github.com/Readon/NSFC-application-template-latex)、[huangwb8](https://github.com/huangwb8/ChineseResearchLaTeX)等。
 
-本模版经历 4 年的使用和打磨，特别为 macOS 系统做适配，同时应同行鼓励，也对windows系统做适配，这里公布出来给潜在用户做参考。
+本模版经历 4 年的使用和打磨，前期为 macOS 系统做适配，后来应同行鼓励，对windows系统做适配，这里公布出来给潜在用户做参考。
 
 ## 使用方法
 
-windows和macOS用户都可以在`xx正文.tex`使用以下设置设置：
+windows、macOS、overleaf用户都可以在`xx正文.tex`使用以下设置设置：
 
 ```latex
 %windows、macOS用户都可用
 \documentclass[UTF8, punct, oneside]{ctexbook}
 \usepackage[windows]{nsfc}
 ```
+
+overleaf用户需要注意的是，字体文件夹也要上传到云端。
 
 macOS用户还可以使用本机自带的字体，在`xx正文.tex`使用以下设置即可：
 
@@ -35,7 +37,7 @@ macOS用户还可以使用本机自带的字体，在`xx正文.tex`使用以下�
 
 免责声明（狗头保命）：
 
-1. 每年模版的文字虽然大差不差，保不齐会有略微改动，请仔细对照文字是否有改动，有的话可提issues，或者进群；
+1. 每年模版的文字虽然大差不差，保不齐会有略微改动，请仔细对照文字是否有改动；遇到问题进群交流，或提issues；
 
    <img src="./figures/wechatgroup.JPG" alt="Image" width="166">
 
