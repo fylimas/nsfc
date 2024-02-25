@@ -167,7 +167,7 @@ FUNCTION {cap.et.al.en} 		{", et~al"}
 FUNCTION {cap.et.al.zh} 		{", 等"}
 FUNCTION {cap.translate.en} 	{"~trans"}
 FUNCTION {cap.translate.zh} 	{"译"}
-FUNCTION {cap.doi.url} 			{"http://dx.doi.org/"}
+FUNCTION {cap.doi.url} 			{"doi: "}%http://dx.doi.org/
 FUNCTION {cap.st.en} 			{"st"}
 FUNCTION {cap.nd.en} 			{"nd"}
 FUNCTION {cap.rd.en} 			{"rd"}
