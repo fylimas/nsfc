@@ -177,7 +177,8 @@ FUNCTION {cap.period} 			{"\@. "}
 FUNCTION {cap.comma} 			{"\@, "}
 FUNCTION {cap.colon} 			{"\thinspace{}\textnormal{: }"}
 FUNCTION {cap.double.slash} 	{" //\thinspace{}"}
-FUNCTION {cap.dash} 			{"\thinspace{}\textnormal{--}\thinspace{}"}
+FUNCTION {cap.dash} 			{"\thinspace{}\textnormal{--}\thinspace{}"} %页码连词号：稍长划线
+%FUNCTION {cap.dash} 			{"\thinspace{}-\thinspace{}"}               %页码连词号：一个短划线
 
 % Predefined latex command used to format the style of bibitems
 FUNCTION {env.bibbegin} 		{ "\begin{thebibliography}" }
