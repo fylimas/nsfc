@@ -667,7 +667,9 @@ FUNCTION {format.names} {                         % String Entry::format_names(S
   namelist num.names$ 'namecount :=               %   namecount = num_names(namelist);
   ""                                              %   String result = "";
   #0 'nameindex :=                                %   nameindex = 0;
-  {nameindex namecount < nameindex #3 < and} {    %   while ((nameindex < namecount) && (nameindex < 3)) {
+% {nameindex namecount < nameindex #3 < and} {    %   while ((nameindex < namecount) && (nameindex < 3)) {
+%国标3个，nsfc2024要求列出所有作者
+  {nameindex namecount <} {                         %   while ((nameindex < namecount)) {
     nameindex #1 + 'nameindex :=                  %     nameindex = nameindex + 1;
     nameindex #1 > {                              %     if (nameindex > 1) {
       cap.comma *                                 %       result = result + cap_comma;
