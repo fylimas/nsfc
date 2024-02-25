@@ -194,7 +194,8 @@
     \stepcounter{subsubsection}
     \zhkai\enkai\fontsize{13pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
-    \par\indent（\arabic{subsubsection}）#1\par
+    \par\indent（\arabic{subsubsection}）#1\par%(1)样式三级标题
+%    \par\noindent\arabic{section}.\arabic{subsection}.\arabic{subsubsection}#1\par%1.1.1样式三级标题
 % \vspace{11pt}
     \endgroup}
 \newcommand\starsubsubsection[1]{%
