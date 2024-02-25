@@ -14,7 +14,26 @@
 参考链接\cite{test4}；
 参考文件\cite{test6}。
 
-中文参考文献中，bib条目中需要有language = {zh}，参见\cite{test2}。
+在表格内的第一行设置\verb|\zhkai\ensong\selectfont|，来选择字体，其中\verb|\zhkai\zhsong\enkai\ensong|可以根据需要选择。
+\begin{table}[htbp]
+	\zhkai\ensong\selectfont%设置表格字体
+	\centering  % 显示位置为中间
+	\caption{表格}  % 表格标题
+	\label{table1}  % 用于索引表格的标签
+	%字母的个数对应列数，|代表分割线
+	% l代表左对齐，c代表居中，r代表右对齐
+	\begin{tabular}{|c|c|c|c|}  
+		\hline  % 表格的横线
+		& & & \\[-6pt]  %可以避免文字偏上来调整文字与上边界的距离
+		第一列&第二列&第三列&第四列 \\  % 表格中的内容，用&分开，\\表示下一行
+		\hline
+		& & & \\[-6pt]  %可以避免文字偏上 
+		0.1&0.2&0.3&0.4 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+对于中文参考文献，bib条目中需要有language = {zh}，参见\cite{test2}。
 
 \begin{REF}
 \subsection*{参考文献}
