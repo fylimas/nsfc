@@ -5,16 +5,8 @@
 % -------------------------------------------------
 
 %------------------------
-%xeCJK包的命令
+%字体设置
 %------------------------
-\defaultfontfeatures{Mapping=tex-text}%连字符
-%特殊符号的宽度
-\xeCJKsetwidth{、，。；}{1.08em}%符号宽度，可添加‘’“”
-\xeCJKsetwidth{（）}{1em}%符号宽度，可添加‘’“”
-\xeCJKsetup{%中英文间空格的宽度
-	CJKecglue = \hspace{0.3em},}
-
-
 \usepackage{fontspec}
 %注意，只有字体本身有粗斜体，或都是粗体斜体都是fake的，才能输出粗斜体
 
@@ -110,6 +102,16 @@
 %小五9pt，六号 7.5pt ，小六6.5pt，七号 5.5pt ，八号5pt
 
 %------------------------
+%xeCJK包的命令
+%------------------------
+\defaultfontfeatures{Mapping=tex-text}%连字符
+%特殊符号的宽度
+\xeCJKsetwidth{、，。；}{1.08em}%符号宽度，可添加‘’“”
+\xeCJKsetwidth{（）}{1em}%符号宽度，可添加‘’“”
+\xeCJKsetup{%中英文间空格的宽度
+	CJKecglue = \hspace{0.3em},}
+
+%------------------------
 %xcolor命令
 %------------------------
 %颜色
@@ -117,11 +119,9 @@
 \definecolor{YSFblue}{RGB}{0, 112, 192}
 \definecolor{HighLight}{RGB}{0,31,141}
 
-\usepackage{enumitem}
-% enumitem command
-\setenumerate[1]{itemsep = 0pt, parsep = 0pt, topsep = 2bp}
-\setitemize[1]{itemsep = -2pt, parsep = 0pt, topsep = 2bp}
-
+%------------------------
+%一些排版的间距
+%------------------------
 %段间距
 \setlength{\parskip}{0.1\baselineskip}
 %自动段落的行间距微调
@@ -253,6 +253,7 @@
 \crefformat{figure}{图~#2#1#3}
 \crefformat{equation}{式~（#2#1#3）}
 \usepackage[figurewithin=none]{caption}
+%图题、表头；若想取消加粗，去掉\bfseries
 \DeclareCaptionFont{capfont}{\zhkai\enkai\fontsize{11pt}{22pt}\selectfont\bfseries} % Caption font
 \DeclareCaptionFont{subfont}{\zhkai\enkai\fontsize{11pt}{22pt}\selectfont\bfseries} % Sub-caption font
 \captionsetup{font = capfont}
@@ -263,7 +264,9 @@
 %\numberwithin{figure}{section}%关联图号和章节，应该是每一个section重置一下图号计数器
 \renewcommand {\thefigure}{\arabic{figure}}% {\thesection{}-\arabic{figure}}%修改图号格式
 
-
+%------------------------
+%列表
+%------------------------
 %带圈数字
 %latex自带\textcircled，但是效果很差
 %\usepackage{tikz}
@@ -276,7 +279,14 @@
 
 %\renewcommand{\labelitemi}{\color{HighLight}\symWingdings\XeTeXglyph153}%第一层
 
-
+\usepackage{enumitem}
+% enumitem command
+\setenumerate[1]{itemsep = 0pt, parsep = 0pt, topsep = 2bp}
+\setitemize[1]{itemsep = -2pt, parsep = 0pt, topsep = 2bp}
+%------------------------
+%代码
+%------------------------
+\usepackage{listings}
 %------------------------
 %脚注
 %------------------------
@@ -290,10 +300,6 @@
 %脚注字体
 \let\oldfootnotesize\footnotesize
 \renewcommand*{\footnotesize}{\oldfootnotesize\zhkai\enkai\fontsize{11pt}{15pt}\selectfont}
-%------------------------
-%代码
-%------------------------
-\usepackage{listings}
 %------------------------
 %高亮、参考文献
 %------------------------
