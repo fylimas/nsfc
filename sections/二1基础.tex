@@ -1,3 +1,4 @@
+
 %\newpage
 \subsection{与本项目密切相关的研究工作积累}
 申请人在xx较为深入的学习和探索，为本项目提供了重要基础和关键支撑。
@@ -6,4 +7,19 @@
 
 行间距变化一般是在“多行蓝色模版”部分前后。因为蓝色模版文字在section里写的，latex把蓝色部分当作一个整体，
 蓝色模版文字不会跨到两页上，导致会挤前一页的行间距，导致前一页行距异常。
-针对这种情况，把它newpage到后一页上，就行了。也可以考虑分段缓解。
+针对这种情况的解决方法：
+\begin{itemize}
+	\item[(1)] 把它newpage到后一页上，就行了。也可以考虑分段缓解，需要写的时候进行规划。
+	\item[(2)] 使用如下nsfc.sty中的相关代码：
+	\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
+		%自动段落的行间距微调
+		\usepackage{setspace}
+		\setstretch{1.6} % 22 bp / 14 pt = 1.571
+	\end{lstlisting}
+\end{itemize}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices lectus eget nunc gravida, eget aliquam purus condimentum. Nullam feugiat, ligula a vestibulum porta, orci sem finibus massa, eu vestibulum risus ex eu metus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices lectus eget nunc gravida, eget aliquam purus condimentum. Nullam feugiat, ligula a vestibulum porta, orci sem finibus massa, eu vestibulum risus ex eu metus.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices lectus eget nunc gravida, eget aliquam purus condimentum. Nullam feugiat, ligula a vestibulum porta, orci sem finibus massa, eu vestibulum risus ex eu metus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices lectus eget nunc gravida, eget aliquam purus condimentum. Nullam feugiat, ligula a vestibulum porta, orci sem finibus massa, eu vestibulum risus ex eu metus.

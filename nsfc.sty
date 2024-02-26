@@ -122,10 +122,11 @@
 \setenumerate[1]{itemsep = 0pt, parsep = 0pt, topsep = 2bp}
 \setitemize[1]{itemsep = -2pt, parsep = 0pt, topsep = 2bp}
 
+%段间距
 \setlength{\parskip}{0.1\baselineskip}
-
-% setspace command
-% \setstretch{1.5} % 22 bp / 14 pt = 1.571
+%自动段落的行间距微调
+\usepackage{setspace}
+\setstretch{1.6} % 22 bp / 14 pt = 1.571
 
 %------------------------
 %模版部分
@@ -292,8 +293,7 @@
 %------------------------
 %代码
 %------------------------
-% \usepackage{minted}   % For syntax highlighting
-% \usemintedstyle{tango}
+\usepackage{listings}
 %------------------------
 %高亮、参考文献
 %------------------------
