@@ -3,10 +3,14 @@
 %%%%%%%%
 %\newpage
 \vspace{-5pt}
-
+模版蓝色字部分没有问题了，正文自己写的排版可能不是你想要的，这种情况下，\textbf{多阅读一下nsfc.sty，可以解决你绝大部分问题}。以下是一些简单的排版示例。
+\subsubsection{字体}
 中文\textbf{粗体}；\textbf{bold} font；
 中文\textit{斜体}；\textit{italic} font；
 
+全文改宋体，可以修改nsfc.sty的MS部分字体，可选的就是\verb|\zhkai,\enkai,\zhsong,\ensong|。
+
+\subsubsection{文献}
 普通引用\cite{test}；上标引用\citess{test}；多篇文章\citess{test,test2,test3}。
 
 有注音的英文：\cite{test}。
@@ -17,27 +21,36 @@
 参考链接\cite{test4}；
 参考文件\cite{test6}。
 
+对于中文参考文献，bib条目中需要有language = {zh}，参见\cite{test2}。
+\subsubsection{列表}
+值得注意的是，不需要一定要用列表环境，用加粗、换行、缩进同样能达到效果。
+因为咱们的初衷，还是LaTeX在排版文献和公式上有优势，发挥这一个优势就行了，其他部分不需要强行套用。文本本身还是最重要、需要大家投入精力的部分。
+
 无序列表的例子：
-\begin{itemize}
-	\item[-] 第一条；
+\begin{itemize}[left= 50pt]
+	\item[-] 第一条，第一条的内容可能很长长长长长长长长长长长长长长长长长长长长；
 	\item[-] 第二条。
 \end{itemize}
 
 有序列表的例子：
-\begin{enumerate}
-	\item 第一条；
+\begin{enumerate}[left= 50pt]
+	\item 第一条，第一条的内容可能很长长长长长长长长长长长长长长长长长长长长；
 	\item 第二条。
 \end{enumerate}
 
+注意，由于列表的缩进，不同使用者可能偏向并不一样。本模版用的enumitem包，阅读他的文档进行个性化，其文档在：https://www.ctan.org/pkg/enumitem
+\subsubsection{图}
 图片的例子：
 \begin{figure}[h]
 \centering %图片居中
 \includegraphics[width=5cm]{figures/wechatgroup}
 \captionsetup{justification=centering} %图题居中
-\caption{这是一个很长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长的图题。}
+\caption{这是图题。}
 \end{figure}
+图题和表头若想取消加粗，去掉nsfc.sty中caption部分的\verb|\bfseries|即可。
 
 
+\subsubsection{表}
 在表格内的第一行设置\verb|\zhkai\ensong\selectfont|，来选择字体，其中\verb|\zhkai\zhsong\enkai\ensong|可以根据需要选择。
 \begin{table}[htbp]
 	\zhkai\ensong\selectfont%设置表格字体
@@ -56,8 +69,6 @@
 		\hline
 	\end{tabular}
 \end{table}
-
-对于中文参考文献，bib条目中需要有language = {zh}，参见\cite{test2}。
 
 \begin{REF}
 \subsection*{参考文献}

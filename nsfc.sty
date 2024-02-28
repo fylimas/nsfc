@@ -5,6 +5,16 @@
 % -------------------------------------------------
 
 %------------------------
+%xeCJK包的命令；要放到最前
+%------------------------
+\defaultfontfeatures{Mapping=tex-text}%连字符
+%特殊符号的宽度
+\xeCJKsetwidth{、，。；}{1.08em}%符号宽度，可添加‘’“”
+\xeCJKsetwidth{（）}{1em}%符号宽度，可添加‘’“”
+\xeCJKsetup{%中英文间空格的宽度
+	CJKecglue = \hspace{0.3em},}
+
+%------------------------
 %字体设置
 %------------------------
 \usepackage{fontspec}
@@ -100,16 +110,6 @@
 %初号42pt，小初36pt，一号26pt，小一24pt，二号22pt，小二18pt
 %三号16pt，小三15pt，四号14pt，小四号 12pt，五号 10.5pt
 %小五9pt，六号 7.5pt ，小六6.5pt，七号 5.5pt ，八号5pt
-
-%------------------------
-%xeCJK包的命令
-%------------------------
-\defaultfontfeatures{Mapping=tex-text}%连字符
-%特殊符号的宽度
-\xeCJKsetwidth{、，。；}{1.08em}%符号宽度，可添加‘’“”
-\xeCJKsetwidth{（）}{1em}%符号宽度，可添加‘’“”
-\xeCJKsetup{%中英文间空格的宽度
-	CJKecglue = \hspace{0.3em},}
 
 %------------------------
 %xcolor命令
@@ -279,12 +279,11 @@
 
 %\renewcommand{\labelitemi}{\color{HighLight}\symWingdings\XeTeXglyph153}%第一层
 
-\usepackage{enumitem}
-% enumitem command
+\usepackage{enumitem}%有序列表
 \setenumerate[1]{itemsep = 0pt, parsep = 0pt, topsep = 2bp}
 \setitemize[1]{itemsep = -2pt, parsep = 0pt, topsep = 2bp}
 %------------------------
-%代码
+%程序代码
 %------------------------
 \usepackage{listings}
 %------------------------
