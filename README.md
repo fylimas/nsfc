@@ -8,7 +8,7 @@ NSFC 官方只有 Word 模版。2019年时，民间有南开大学程明明教�
 
 ## 使用方法
 
-windows、macOS、overleaf用户都可以在`xx正文.tex`使用以下设置设置：
+- windows、macOS、overleaf用户都可以在`xx正文.tex`使用以下设置设置：
 
 ```latex
 %windows、macOS用户都可用
@@ -16,9 +16,9 @@ windows、macOS、overleaf用户都可以在`xx正文.tex`使用以下设置设�
 \usepackage[windows]{nsfc}
 ```
 
-overleaf用户需要注意的是，字体文件夹也要上传到云端。
+编译器用XeLaTeX；overleaf用户需要注意的是，字体文件夹也要上传到云端。
 
-macOS用户还可以使用本机自带的字体，在`xx正文.tex`使用以下设置即可：
+- macOS用户还可以使用本机自带的字体，在`xx正文.tex`使用以下设置即可：
 
 ```latex
 %macOS用户独享
