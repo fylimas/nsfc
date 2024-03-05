@@ -264,6 +264,11 @@
 %\numberwithin{figure}{section}%关联图号和章节，应该是每一个section重置一下图号计数器
 \renewcommand {\thefigure}{\arabic{figure}}% {\thesection{}-\arabic{figure}}%修改图号格式
 
+%公式计数器
+\renewcommand{\theequation}
+{\arabic{equation}}%样式：(1)
+%{\thesection{}-\arabic{figure}}%样式：(1.1-1)
+%{\thechapter{}-\arabic{figure}}%样式：(1-1)，注意（一）立项依据里的所有节都是第一章
 %------------------------
 %列表
 %------------------------
