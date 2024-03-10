@@ -1,27 +1,67 @@
 
 %\newpage
-\subsection{与本项目密切相关的研究工作积累}
-申请人在xx较为深入的学习和探索，为本项目提供了重要基础和关键支撑。
 
-\textcircled{\small 1} {\bfseries 在xx方面}：
+\subsubsection{可能的页面最后一段行距压缩}
 
-行间距变化一般是在“多行蓝色模版”部分前后。因为蓝色模版文字在section里写的，latex把蓝色部分当作一个整体，
-蓝色模版文字不会跨到两页上，导致会挤前一页的行间距，导致前一页行距异常。
-针对这种情况的解决方法：
-\begin{itemize}
-	\item[(1)] 把它newpage到后一页上，就行了。也可以考虑分段缓解，需要写的时候进行规划。
-	\item[(2)] 使用如下nsfc.sty中的相关代码：
-	\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
-		%自动段落的行间距微调
-		\usepackage{setspace}
-		\setstretch{1.6} % 22 bp / 14 pt = 1.571
-	\end{lstlisting}
-\end{itemize}
+行间距变化一般是在“多行蓝色模版”部分前后。因为蓝色模版文字在section里写的，latex把蓝色部分当作一个整体，可能硬要挤到这一页，而不是换新一页，导致会挤前一页的行间距，导致前一页行距异常。
+针对这种情况，模版已经使用
+\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
+	%自动段落的行间距微调
+	\usepackage{setspace}
+	\setstretch{1.6} % 22 bp / 14 pt = 1.571
+\end{lstlisting}
+降低了这种情况发生的可能。
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices lectus eget nunc gravida, eget aliquam purus condimentum. Nullam feugiat, ligula a vestibulum porta, orci sem finibus massa, eu vestibulum risus ex eu metus. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices lectus eget nunc gravida, eget aliquam purus condimentum. Nullam feugiat, ligula a vestibulum porta, orci sem finibus massa, eu vestibulum risus ex eu metus.
+如果还有，就只好添加\verb|\newpage|把它newpage到后一页上，就行了。也可以考虑分段缓解，需要写的时候进行规划。
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices lectus eget nunc gravida, eget aliquam purus condimentum. Nullam feugiat, ligula a vestibulum porta, orci sem finibus massa, eu vestibulum risus ex eu metus. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices lectus eget nunc gravida, eget aliquam purus condimentum. Nullam feugiat, ligula a vestibulum porta, orci sem finibus massa, eu vestibulum risus ex eu metus.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices lectus eget nunc gravida, eget aliquam purus condimentum. Nullam feugiat, ligula a vestibulum porta, orci sem finibus massa, eu vestibulum risus ex eu metus.
+\subsubsection{发表文章}
+这里可能需要列出自己的相关文章。由于文章和依据部分的文献的格式并不一定一致，建议使用下边方法：
+\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
+\begin{thebibliography}{1}
+\bibitem{test}
+\bibauthor{\textbf{C\"aldognetto T\@, Tenti P}}\@. 
+\bibtitle{Microgrids Operation Based on Master–Slave Cooperative Control}
+\bibmark{[J]}\@.
+\bibjournal{IEEE Journal of Emerging and Selected Topics in Power Electronics}\@,
+\bibvolume{2}\bibnumber{(4)}\thinspace{}\textnormal{:}
+\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@,
+\bibyear{2014}\@.
+\url{doi: 10.1109/JESTPE.2014.2345052}\@.
+\end{thebibliography}
+\end{lstlisting}
+效果如下。这个东西从哪里来的呢？从编译产生的\verb|.bbl|文件中拷贝过来放进来，就可以了。
+\vspace{-50pt}
+\begin{thebibliography}{1}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{#1}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibversion}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\newline\url{#1}}
+	\bibitem{test}
+	\bibauthor{\textbf{C\"aldognetto T\@, Tenti P}}\@. \bibtitle{Microgrids Operation Based
+		on Master–Slave Cooperative Control}\bibmark{[J/OL]}\@. \bibjournal{IEEE
+		Journal of Emerging and Selected Topics in Power Electronics}\@,
+	\bibvolume{2}\bibnumber{(4)}\thinspace{}\textnormal{:
+	}\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@,
+	\bibyear{2014}\@. \url{doi: 10.1109/JESTPE.2014.2345052}\@.
+\end{thebibliography}
+\newpage
