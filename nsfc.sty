@@ -262,7 +262,9 @@
 \captionsetup[table]{labelsep=space}
 
 %\numberwithin{figure}{section}%关联图号和章节，应该是每一个section重置一下图号计数器
-\renewcommand {\thefigure}{\arabic{figure}}% {\thesection{}-\arabic{figure}}%修改图号格式
+%\renewcommand {\thefigure}{\arabic{figure}}%图1
+%\renewcommand {\thefigure}{\thesection{}-\arabic{figure}}%图1.1-1
+%如果想修改图中的数字字体，就在对应部分添加\ensong\selectfont\arabic{figure}，或者\enkai\selectfont\arabic{figure}。
 
 %公式计数器
 \renewcommand{\theequation}
