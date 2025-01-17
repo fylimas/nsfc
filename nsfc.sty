@@ -3,7 +3,7 @@
 % 本模版即修改自 2019 年的 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了【2024年又进行了更新】。
 % 经历 3 年的使用和打磨，特别为 macOS 系统做适配，同时应同行鼓励，对windows系统做适配，这里公布出来给潜在用户做参考。
 % -------------------------------------------------
-
+\makeatletter
 %------------------------
 %xeCJK包的命令；要放到最前
 %------------------------
@@ -120,15 +120,6 @@
 \definecolor{HighLight}{RGB}{0,31,141}
 
 %------------------------
-%一些排版的间距
-%------------------------
-%段间距
-\setlength{\parskip}{0.1\baselineskip}
-%自动段落的行间距微调
-\usepackage{setspace}
-\setstretch{1.6} % 22 bp / 14 pt = 1.571
-
-%------------------------
 %模版部分
 %------------------------
 % For the chapter name like （一）立项依据与研究内容（4000-8000字）
@@ -236,11 +227,19 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 % Size of the math equations
-\DeclareMathSizes{10}{10}{7}{5}
-\DeclareMathSizes{11}{11}{7.7}{5.5}
-\DeclareMathSizes{12.5}{11}{8.4}{6}
-\DeclareMathSizes{13}{13}{9.1}{6.5}
+%\DeclareMathSizes{10}{10}{7}{5}
+%\DeclareMathSizes{11}{11}{7.7}{5.5}
+%\DeclareMathSizes{12.5}{11}{8.4}{6}
+%\DeclareMathSizes{13}{13}{9.1}{6.5}
 \DeclareMathSizes{14}{14}{9.8}{7}
+%公式上下间距
+\everydisplay\expandafter{%
+	\the\everydisplay
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+}
 
 
 \usepackage{graphicx}
@@ -297,7 +296,6 @@
 %脚注
 %------------------------
 %脚注分割横线
-\makeatletter
 \newskip\@footindent
 \@footindent=1em
 \renewcommand\footnoterule{\vspace{6pt}\kern-3\p@ \hrule height 0.8pt width 0.4\columnwidth \kern 2.6\p@\vspace{2pt}}
@@ -340,6 +338,15 @@
 %\def\cvprsubsect#1{\cvprsubsection{\hskip -1em.~#1 \vspace{-0.2em}}}
 %\def\subsection{\@ifstar\cvprssubsect\cvprsubsect}
 
+
+%------------------------
+%一些排版的间距
+%------------------------
+%段间距
+\setlength{\parskip}{0.1\baselineskip}
+%自动段落的行间距微调
+\usepackage{setspace}
+\setstretch{1.6} % 22 bp / 14 pt = 1.571
 %------------------------
 %微调部分文字中字体的胖瘦
 %------------------------
@@ -352,3 +359,5 @@
 
 %查看命令的定义
 %\meaning\cite等
+
+\makeatother
