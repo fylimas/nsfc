@@ -1,9 +1,19 @@
 
-\subsection{研究意义}
+
+\subsection{编译方法}
+免责声明：敬请大家仔细对比本模版与官方word转pdf后的差别，自行确定是否采用。个人认为，系统上传PDF，只要人眼看不出与官方区别，那就没区别。
+
+\begin{enumerate}
+	\item 编译：XeLaTex->bibtex->XeLaTeX->XeLaTeX
+	\item 排错：多看编译错误，多查询错误解决方法；编译警告，只要不影响PDF，就不用管。本模版多人使用，可以认为不存在编译错误。
+	\item 自定义格式：多阅读一下nsfc.sty，可以解决你绝大部分问题。超过nsfc.sty范围的，建议不要想办法定制，事倍功半。
+\end{enumerate}
+
+\subsection{编辑方法}
 %%%%%%%%
 %\newpage
 \vspace{-5pt}
-模版蓝色字部分没有问题了，正文自己写的排版可能不是你想要的，这种情况下，\textbf{多阅读一下nsfc.sty，可以解决你绝大部分问题}。以下是一些简单的排版示例。
+
 \subsubsection{字体}
 中文\textbf{粗体}；\textbf{bold} font；
 中文\textit{斜体}；\textit{italic} font；
@@ -25,10 +35,8 @@
 
 对于中文参考文献，bib条目中需要有language = {zh}，参见\cite{test2}。
 \subsubsection{列表}
-值得注意的是，不需要一定要用列表环境，用加粗、换行、缩进同样能达到效果。
-因为咱们的初衷，还是LaTeX在排版文献和公式上有优势，发挥这一个优势就行了，其他部分不需要强行套用。文本本身还是最重要、需要大家投入精力的部分。
-
-无序列表的例子：
+无序列表\footnote{值得注意的是，不需要一定要用列表环境，用加粗、换行、缩进同样能达到效果。
+	因为咱们的初衷，还是LaTeX在排版文献和公式上有优势，发挥这一个优势就行了，其他部分不需要强行套用。文本本身还是最重要、需要大家投入精力的部分。}的例子：
 \begin{itemize}[left= 50pt]
 	\item[-] 第一条，第一条的内容可能很长长长长长长长长长长长长长长长长长长长长；
 	\item[-] 第二条。
@@ -57,12 +65,13 @@
 
 \subsubsection{图}
 图片的例子：
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering %图片居中
-\includegraphics[width=5cm]{figures/IMG.JPG}
+\includegraphics[width=2cm]{figures/IMG.JPG}
 \captionsetup{justification=centering} %图题居中
 \caption{这是图题。}
 \end{figure}
+
 图题和表头若想取消加粗，去掉nsfc.sty中caption部分的\verb|\bfseries|即可。
 
 
@@ -88,6 +97,18 @@
 	\end{tabular}
 \end{table}
 
+\subsection{某页最后一段行距可能很窄？}
+如果没有这个问题，就不用管这个事情。
+
+行间距变化一般是在“多行蓝色模版”部分前后。因为蓝色模版文字在section里写的，latex把蓝色部分当作一个整体，可能硬要挤到这一页，而不是换新一页，导致会挤前一页的行间距，导致前一页行距异常。
+针对这种情况，模版已经使用
+\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
+	%自动段落的行间距微调
+	\usepackage{setspace}
+	\setstretch{1.6} % 22 bp / 14 pt = 1.571
+\end{lstlisting}
+降低了这种情况发生的可能。
+如果还有，就只好添加\verb|\newpage|把它newpage到后一页上，就行了。也可以考虑分段缓解，需要写的时候注意页面的分段和字数。
 
 \begin{REF}
 \subsection*{参考文献}
