@@ -27,18 +27,18 @@
 	AutoFakeSlant=0.3,
 	AutoFakeBold=3,
 	Scale = 0.98%微调字体胖瘦
-	]{Kaiti.ttf}
+	]{HYKaiTiJ.ttf}
 \newfontfamily{\WINkai}[%英文
 	Path=./fonts/,
 	AutoFakeSlant=0.3,
 	AutoFakeBold=3,
-	]{Kaiti.ttf}
+	]{simkai.ttf}
 %微软宋体
 \setCJKfamilyfont{WINsong}[%中文
 	Path=./fonts/,
 	AutoFakeSlant=0.3,
 	AutoFakeBold=3,
-	]{SimSun.ttf}
+	]{simsun.ttc}
 \newfontfamily{\WINsong}[%英文
 	Path=./fonts/,
 	AutoFakeSlant=0.3,
@@ -116,7 +116,8 @@
 %------------------------
 %颜色
 \usepackage{xcolor}
-\definecolor{YSFblue}{RGB}{0, 112, 192}
+%\definecolor{YSFblue}{RGB}{0, 112, 192}
+\definecolor{YSFblue}{RGB}{0,0,0}
 \definecolor{HighLight}{RGB}{0,31,141}
 
 %------------------------
@@ -145,7 +146,7 @@
     \stepcounter{section}
     \color{YSFblue}\zhkai\enkai\fontsize{14pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
-    \par\indent\arabic{section}．#1\par
+    \par\indent\arabic{section}.#1\par%24年全角点；25年半角点；
 % \vspace{11pt}
     \endgroup}
 \newcommand\starsection[1]{\origsection*{#1}}
