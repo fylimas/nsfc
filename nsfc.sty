@@ -128,8 +128,8 @@
 \let\origchapter\chapter
 \renewcommand\chapter{\@ifstar{\starchapter}{\nostarchapter}}
 \newcommand\nostarchapter[1]{%
-    \begingroup
-    \vspace{6pt}\refstepcounter{chapter}
+\refstepcounter{chapter}\begingroup
+    \vspace{6pt}
     \color{YSFblue}\zhkai\enkai\fontsize{14pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent\textbf{（\chinese{chapter}）}#1\par
@@ -142,9 +142,8 @@
 \let\origsection\section
 \renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
 \newcommand\nostarsection[1]{%
-    \begingroup
+    \refstepcounter{section}\begingroup
 %     \vspace{0pt}
-    \refstepcounter{section}
     \color{YSFblue}\zhkai\enkai\fontsize{14pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent\arabic{section}.#1\par%24年全角点；25年半角点；
@@ -159,9 +158,8 @@
 \let\origsubsection\subsection
 \renewcommand\subsection{\@ifstar{\starsubsection}{\nostarsubsection}}
 \newcommand\nostarsubsection[1]{%
-    \begingroup\color{HighLight}
+    \refstepcounter{subsection}\begingroup\color{HighLight}
     \vspace{6pt}
-    \stepcounter{subsection}
     \zhkai\enkai\fontsize{13pt}{22pt}\selectfont\bfseries%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\noindent\arabic{section}.\arabic{subsection}#1\par
@@ -179,15 +177,11 @@
     \vspace{2pt}
     \endgroup}
 
-%\renewcommand\thesection{\arabic{section}．}
-%\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
-
 \let\origsubsubsection\subsubsection
 \renewcommand\subsubsection{\@ifstar{\starsubsubsection}{\nostarsubsubsection}}
 \newcommand\nostarsubsubsection[1]{%
-    \begingroup\color{HighLight}
+    \refstepcounter{subsubsection}\begingroup\color{HighLight}
 %     \vspace{0pt}
-    \stepcounter{subsubsection}
     \zhkai\enkai\fontsize{13pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent（\arabic{subsubsection}）#1\par%(1)样式三级标题
@@ -195,14 +189,18 @@
 % \vspace{11pt}
     \endgroup}
 \newcommand\starsubsubsection[1]{%
-    \begingroup\color{HighLight}
+    \refstepcounter{subsubsection}\begingroup\color{HighLight}
 	\vspace{2pt}
-    \stepcounter{subsubsection}
     \zhkai\enkai\fontsize{12.5pt}{22pt}\selectfont%
     \setlength{\baselineskip}{20pt}%最后设置，防止被fontsize中的覆盖
     \par\indent#1\par
     %\vspace{-1pt}
     \endgroup}
+
+%章节引用格式
+\renewcommand\thesection{\arabic{section}．}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection} (\arabic{subsubsection})}
 %------------------------
 %正文段落
 %------------------------

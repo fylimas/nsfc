@@ -1,8 +1,10 @@
 
+免责声明：敬请大家仔细对比本模版与官方word转pdf后的差别，自行确定是否采用。
+取消正文tex这一行注释即可对比：\verb|%\renewcommand{\input}[1]|\\
+\verb|{\vspace{\baselineskip}}|。
+个人认为，2025年系统仍然上传PDF，只要人眼无法分辨与官方区别，就可以。
 
 \subsection{编译方法}
-免责声明：敬请大家仔细对比本模版与官方word转pdf后的差别，自行确定是否采用。个人认为，系统上传PDF，只要人眼看不出与官方区别，那就没区别。
-
 \begin{enumerate}
 	\item 编译：XeLaTex->bibtex->XeLaTeX->XeLaTeX
 	\item 排错：多看编译错误，多查询错误解决方法；编译警告，只要不影响PDF，就不用管。本模版多人使用，可以认为不存在编译错误。
@@ -15,8 +17,17 @@
 %\newpage
 \vspace{-5pt}
 
-\subsubsection{章节}\label{sec:t}
-引用章节\ref{sec:t}，并不能产生对应的引用。原因是，本模版把（一）当作第一章，引用之后的效果比较丑，并且不同人的想要的引用格式不一样。因此，本模版不打算支持对章节的引用，建议手敲。
+\begin{figure}[h!]
+	\centering %图片居中
+	\includegraphics[width=6cm]{figures/xiugai.png}
+	\captionsetup{justification=centering} %图题居中
+	\caption{项目文件夹结构。}
+\end{figure}
+只需要修改上图中蓝色选中区域文件即可。其他剩余文件，可以直接采用模版替换，编译就是最新版。
+
+\subsubsection{章节}\label{subsubsec:t}
+\verb|\label{subsubsect:t}|
+引用章节\verb|\ref{subsubsec:t}|，生成为：\ref{subsubsec:t}。这个样式可能不是你想要的，那种情况下，就手敲吧！申请书不像论文，这种情况应该没几个。
 
 \subsubsection{字体}
 中文\textbf{粗体}；\textbf{bold} font；
