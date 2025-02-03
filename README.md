@@ -8,7 +8,8 @@ NSFC 官方只有 Word 模版。2019年时，民间有南开大学程明明教�
 
 ## 使用方法
 
-![](figures/xiugai.png)
+<img src="figures/xiugai.png" alt="项目文件结构" width="300"/>
+
 只需要修改上图中蓝色选中区域文件即可。其他剩余文件，可以直接采用模版替换，编译就是最新版。
 
 - windows、macOS、overleaf用户都可以在`xx正文.tex`使用以下设置设置；编译器用XeLaTeX；overleaf用户需要注意的是，字体文件夹也要上传到云端：
