@@ -129,7 +129,7 @@
 \renewcommand\chapter{\@ifstar{\starchapter}{\nostarchapter}}
 \newcommand\nostarchapter[1]{%
     \begingroup
-    \vspace{6pt}\stepcounter{chapter}
+    \vspace{6pt}\refstepcounter{chapter}
     \color{YSFblue}\zhkai\enkai\fontsize{14pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent\textbf{（\chinese{chapter}）}#1\par
@@ -144,7 +144,7 @@
 \newcommand\nostarsection[1]{%
     \begingroup
 %     \vspace{0pt}
-    \stepcounter{section}
+    \refstepcounter{section}
     \color{YSFblue}\zhkai\enkai\fontsize{14pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent\arabic{section}.#1\par%24年全角点；25年半角点；
