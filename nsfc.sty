@@ -247,6 +247,7 @@
 \usepackage{booktabs}
 % \usepackage[citebordercolor = white]{hyperref}
 \usepackage[hidelinks]{hyperref}
+%\hypersetup{colorlinks,linkcolor=black}%引用超链接颜色，可用YSFblue
 \usepackage{cleveref}%须在hyperref后边
 \crefformat{table}{表~#2#1#3}
 \crefformat{figure}{图~#2#1#3}
@@ -300,7 +301,7 @@
 \@footindent=1em
 \renewcommand\footnoterule{\vspace{6pt}\kern-3\p@ \hrule height 0.8pt width 0.4\columnwidth \kern 2.6\p@\vspace{2pt}}
 %脚注引用数字
-\renewcommand\thefootnote{\textcircled{\enkai\fontsize{9pt}{15pt}\selectfont\arabic{footnote}}}
+\renewcommand\thefootnote{\textcircled{\enkai\fontsize{7pt}{15pt}\selectfont\arabic{footnote}}}
 %脚注字体
 \let\oldfootnotesize\footnotesize
 \renewcommand*{\footnotesize}{\oldfootnotesize\zhkai\enkai\fontsize{11pt}{15pt}\selectfont}
