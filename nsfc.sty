@@ -132,7 +132,11 @@
     \vspace{6pt}
     \color{YSFblue}\zhkai\enkai\fontsize{14pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
-    \par\indent\textbf{（\chinese{chapter}）}#1\par
+    \ifnum\value{chapter}=1 %是word没对齐，但是我们还是向word对齐
+        \par\noindent\textbf{\kg{1.6em}（\chinese{chapter}）}#1\par
+    \else
+        \par\noindent\textbf{\kg{2.1em}（\chinese{chapter}）}#1\par
+     \fi
     \vspace{0pt}
     \endgroup}
 
