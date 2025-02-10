@@ -2,6 +2,32 @@
 
 \subsubsection*{\bfseries （1）xx}
 
+
+\begin{figure}[h!]
+	\centering %图片居中
+	\includegraphics[width=2cm]{figures/IMG.JPG}
+	\captionsetup{justification=centering} %图题居中
+	\caption{这是图题}
+\end{figure}
+
+\begin{table}[htbp]
+	\zhkai\ensong\selectfont%设置表格字体
+	\centering  % 显示位置为中间
+	\caption{表格}  % 表格标题
+	\label{table1}  % 用于索引表格的标签
+	%字母的个数对应列数，|代表分割线
+	% l代表左对齐，c代表居中，r代表右对齐
+	\begin{tabular}{|c|c|c|c|}  
+		\hline  % 表格的横线
+		& & & \\[-6pt]  %可以避免文字偏上来调整文字与上边界的距离
+		第一列&第二列&第三列&第四列 \\  % 表格中的内容，用&分开，\\表示下一行
+		\hline
+		& & & \\[-6pt]  %可以避免文字偏上 
+		0.1&0.2&0.3&0.4 \\
+		\hline
+	\end{tabular}
+\end{table}
+
 \subsection{研究目标}
 
 \subsection{拟解决的关键科学问题}

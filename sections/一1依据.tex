@@ -1,4 +1,6 @@
 
+上述问题的耦合效应形成恶性循环
+
 免责声明：敬请大家仔细对比本模版与官方word转pdf后的差别，自行确定是否采用。
 取消正文tex这一行注释即可对比：\verb|%\renewcommand{\input}[1]|\\
 \verb|{\vspace{\baselineskip}}|。
@@ -21,7 +23,7 @@
 	\centering %图片居中
 	\includegraphics[width=6cm]{figures/xiugai.png}
 	\captionsetup{justification=centering} %图题居中
-	\caption{项目文件夹结构。}
+	\caption{项目文件夹结构}
 \end{figure}
 只需要修改上图中蓝色选中区域文件即可。其他剩余文件，可以直接采用模版替换，编译就是最新版。
 
@@ -32,7 +34,8 @@
 \subsubsection{字体}
 中文\textbf{粗体}；\textbf{bold} font；
 中文\textit{斜体}；\textit{italic} font；
-中文\textul{下划线}；\textul{underline}；
+
+克制使用以下标注（不用更好），防止专家眼花缭乱。\textul{添加下划线}；\textull{添加双下划线}；\textuw{添加下弯线}；\textud{添加下点线}。
 
 全文改宋体，可以修改nsfc.sty的MS部分字体。
 
@@ -85,7 +88,7 @@
 \centering %图片居中
 \includegraphics[width=2cm]{figures/IMG.JPG}
 \captionsetup{justification=centering} %图题居中
-\caption{这是图题。}
+\caption{这是图题}
 \end{figure}
 
 图题和表头若想取消加粗，去掉nsfc.sty中caption部分的\verb|\bfseries|即可。

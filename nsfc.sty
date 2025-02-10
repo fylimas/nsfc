@@ -209,14 +209,21 @@
 %正文段落
 %------------------------
 \newenvironment{MS}%
-	{%\begingroup\zhsong\ensong\fontsize{12.5pt}{22pt}\selectfont%
-	\begingroup\zhkai\ensong\fontsize{12.5pt}{23pt}\selectfont%
+	{%\begingroup\zhsong\ensong\fontsize{12.5pt}{22pt}\selectfont%段落：中文宋体，英文宋体
+	\begingroup\zhkai\ensong\fontsize{12.5pt}{23pt}\selectfont%段落：中文楷体，英文宋体
 	\setlength{\baselineskip}{22.1pt}}
 	{\endgroup}
 
 %CTEX包自动引用xeCJK包，文档查看xeCJK
+%------------------------
+%文字标注
+%------------------------
 %CJKunderdot,CJKunderline,CJKunderdblline,CJKunderwave
-\newcommand\underwave{\CJKunderwave[format=\color{blue},depth=0.35em]}
+\usepackage{xeCJKfntef} %可自动换行的文字下划线
+\newcommand{\textul}[1]{\CJKunderline[skip=false]{#1}}%下划线
+\newcommand{\textull}[1]{\CJKunderdblline[skip=false]{#1}}%下划线
+\newcommand{\textuw}[1]{\CJKunderwave[format=\color{blue},depth=0.35em]{#1}}%下弯线
+\newcommand{\textud}[1]{\CJKunderdot[format=\color{blue},depth=0.35em]{#1}}%下点线
 
 %在Word中我们只要选中孤行控制，Word就不会将一段的第一行或者最后一行放在不同的页面。Latex中好像没有相应的命令。Latex只是尽量防止孤行，当避免孤行会导致大量的页面空白的时候，Latex会放弃避免孤行。我们可以改变孤行的惩罚权重来告诉Latex我们更在乎孤行。有两个参数控制这些：
 %\widowpenalty=4000
@@ -263,12 +270,14 @@
 \captionsetup{font = capfont}
 \captionsetup[subfigure]{font = subfont}
 \captionsetup[figure]{labelsep=period}
-\captionsetup[table]{labelsep=space}
+\captionsetup[table]{labelsep=period}
 
 %\numberwithin{figure}{section}%关联图号和章节，应该是每一个section重置一下图号计数器
-%\renewcommand {\thefigure}{\arabic{figure}}%图1
+\renewcommand {\thefigure}{\arabic{figure}}%图1
 %\renewcommand {\thefigure}{\thesection{}-\arabic{figure}}%图1.1-1
 %如果想修改图中的数字字体，就在对应部分添加\ensong\selectfont\arabic{figure}，或者\enkai\selectfont\arabic{figure}。
+
+\renewcommand {\thetable}{\arabic{table}}%表1
 
 %公式计数器
 \renewcommand{\theequation}
@@ -297,11 +306,6 @@
 %程序代码
 %------------------------
 \usepackage{listings}
-%------------------------
-%文字标注
-%------------------------
-\usepackage{xeCJKfntef} %可自动换行的文字下划线
-\newcommand{\textul}[1]{\CJKunderline[skip=false]{#1}}
 %------------------------
 %脚注
 %------------------------
