@@ -272,6 +272,10 @@
 \captionsetup[figure]{labelsep=period}
 \captionsetup[table]{labelsep=period}
 
+%图标标题的上下间距
+\setlength{\abovecaptionskip}{0pt}  % 修改 caption 与图表上方的距离
+\setlength{\belowcaptionskip}{-10pt} % 修改 caption 与正文的距离
+
 %\numberwithin{figure}{section}%关联图号和章节，应该是每一个section重置一下图号计数器
 \renewcommand {\thefigure}{\arabic{figure}}%图1
 %\renewcommand {\thefigure}{\thesection{}-\arabic{figure}}%图1.1-1
@@ -365,7 +369,7 @@
 %微调部分文字中字体的胖瘦
 %------------------------
 \newcommand{\ps}[2][0.95]{\scalebox{#1}[1]{#2}}%#1默认取0.95等
-\newcommand{\kg}[1]{\kern#1}%-0.1em
+\newcommand{\kg}[1]{\kern#1}%-0.1em；空格
 
 %\excludecomment{MS}%用来对比模版有无变化
 %或者下边这种方法
