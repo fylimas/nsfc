@@ -188,7 +188,7 @@
 %     \vspace{0pt}
     \zhkai\enkai\fontsize{13pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
-    \par\indent（\arabic{subsubsection}）#1\par%(1)样式三级标题
+    \par\indent（\arabic{subsubsection}）#1\par%1.1下(1)样式三级标题
 %    \par\noindent\arabic{section}.\arabic{subsection}.\arabic{subsubsection}#1\par%1.1.1样式三级标题
 % \vspace{11pt}
     \endgroup}
@@ -202,9 +202,10 @@
     \endgroup}
 
 %章节引用格式
-\renewcommand\thesection{\arabic{section}．}
-\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
-\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection} (\arabic{subsubsection})}
+\renewcommand\thesection{\arabic{section}．}%节样式：1.
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}%小节样式：1.1
+\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection} (\arabic{subsubsection})}%小小节样式：1.1(1)
+%\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}%小小节样式：1.1.1样式
 %------------------------
 %正文段落
 %------------------------
