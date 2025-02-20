@@ -1,0 +1,8 @@
+%来年打算提供github无痛升级计划，即github用户只需要克隆、同步即可：
+%设置自己的路径，方便更新或同步模版
+\graphicspath{{figures/}}   % 设置图片所存放的目录
+\makeatletter
+\def\input@path{{sections/}} % 设置输入文件的目录
+\makeatother
+\let\origbibliography\bibliography
+\renewcommand\bibliography[1]{\origbibliography{bibs/#1}}
