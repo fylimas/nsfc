@@ -329,9 +329,13 @@
 \newcommand{\highlight}[1]{
 	\textcolor{HighLight}{{\bfseries#1}}}
 
-\usepackage[square,numbers,sort&compress]{natbib}
-%上标引用
-\newcommand{\citess}[1]{\textsuperscript{\cite{#1}}}
+\usepackage[square,numbers,sort&compress]{natbib}%数字引用[1]
+\bibliographystyle{bibs/gbt7714-numerical}
+%\usepackage[round,sort]{natbib}%作者年引用Author(2022)
+%\bibliographystyle{bibs/gbt7714-author-year}
+%bst定制方法：修改对应.bst文件的FUNCTION {load.config}部分设置
+
+\newcommand{\citess}[1]{\textsuperscript{\cite{#1}}}%上标引用
 
 \setlength{\bibsep}{5pt plus 0.3ex}%bib条目间距
 \renewcommand\bibsection{\section*{%
