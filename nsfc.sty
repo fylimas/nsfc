@@ -212,7 +212,8 @@
 \newenvironment{MS}%
 	{%\begingroup\zhsong\ensong\fontsize{12.5pt}{22pt}\selectfont%段落：中文宋体，英文宋体
 	\begingroup\zhkai\ensong\fontsize{12.5pt}{23pt}\selectfont%段落：中文楷体，英文宋体
-	\setlength{\baselineskip}{22.1pt}}
+	\setlength{\baselineskip}{22.1pt}
+    \everydisplay=\expandafter{\the\everydisplay\setstretch{1}}}%重置正文行间距对数学公式行间距影响
 	{\endgroup}
 
 %CTEX包自动引用xeCJK包，文档查看xeCJK
