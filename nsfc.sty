@@ -210,11 +210,17 @@
 %正文段落
 %------------------------
 \newenvironment{MS}%
-	{%\begingroup\zhsong\ensong\fontsize{12.5pt}{22pt}\selectfont%段落：中文宋体，英文宋体
+{%\begingroup\zhsong\ensong\fontsize{12.5pt}{22pt}\selectfont%段落：中文宋体，英文宋体
 	\begingroup\zhkai\ensong\fontsize{12.5pt}{23pt}\selectfont%段落：中文楷体，英文宋体
 	\setlength{\baselineskip}{22.1pt}
-    \everydisplay=\expandafter{\the\everydisplay\setstretch{1}}}%重置正文行间距对数学公式行间距影响
-	{\endgroup}
+	\everydisplay=\expandafter{\the\everydisplay\setstretch{1}%重置正文行间距对数学公式行间距影响
+		%公式上下间距，不需要设置，想设置可以设置
+		\setlength{\abovedisplayskip}{10pt}
+		\setlength{\belowdisplayskip}{10pt}%
+		\setlength{\abovedisplayshortskip}{0pt}%对于上一行半行文本的情况
+		\setlength{\belowdisplayshortskip}{10pt}%%对于下一行半行文本的情况
+}}
+{\endgroup}
 
 %CTEX包自动引用xeCJK包，文档查看xeCJK
 %------------------------
@@ -245,15 +251,6 @@
 %\DeclareMathSizes{12.5}{11}{8.4}{6}
 %\DeclareMathSizes{13}{13}{9.1}{6.5}
 \DeclareMathSizes{14}{14}{9.8}{7}
-%公式上下间距
-\everydisplay\expandafter{%
-	\the\everydisplay
-\setlength{\abovedisplayskip}{0pt}
-\setlength{\belowdisplayskip}{0pt}
-\setlength{\abovedisplayshortskip}{0pt}
-\setlength{\belowdisplayshortskip}{0pt}
-}
-
 
 \usepackage{graphicx}
 \usepackage[subrefformat=parens,labelformat=parens]{subfig} %
