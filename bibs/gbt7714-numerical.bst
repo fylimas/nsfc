@@ -60,34 +60,34 @@ STRINGS {
 
 FUNCTION {load.config}
 {
-  #2 'citation.et.al.min :=
+  #2 'citation.et.al.min :=%【可修改】正文引用时候至少出现的人数？？？待确认，可群里反馈
   #1 'citation.et.al.use.first :=
-  #4 'bibliography.et.al.min :=
+  #4 'bibliography.et.al.min :=%【可修改】算上et.al在内，参考文献中出现的人数。例如Zhang S, Li S, et al.算3个人
   #3 'bibliography.et.al.use.first :=
   #0 'uppercase.name :=
   #0 'terms.in.macro :=
   #0 'year.after.author :=
   #1 'period.after.author :=
-  #0 'italic.book.title :=
+  #0 'italic.journal :=%【可修改】如果想把期刊名斜体，改为1；不会斜体会议
+  #1 'italic.book.title :=%【可修改】如果想把会议名斜体，改为1；不会斜体期刊，但是会斜体专著
   #1 'sentence.case.title :=
   #0 'link.title :=
   #1 'title.in.journal :=
   #0 'show.patent.country :=
-  #1 'show.mark :=
+  #0 'show.mark := %【可修改】如果不想要[J][M]这种文献类型表示，改为0
   #0 'space.before.mark :=
   #1 'show.medium.type :=
   "slash" 'component.part.label :=
   #0 'short.journal :=
-  #0 'italic.journal :=
   #0 'link.journal :=
   #0 'bold.journal.volume :=
-  #0 'show.missing.address.publisher :=
+  #0 'show.missing.address.publisher :=%【可修改】应该是文献缺少地址，是否现实sl,sn？？？待确认，可群里反馈
   #1 'space.before.pages :=
   #0 'only.start.page :=
   #0 'wave.dash.in.pages :=
   #1 'show.urldate :=
   #1 'show.url :=
-  #1 'show.doi :=
+  #0 'show.doi :=%【可修改】如果想显示doi，改为1
   #1 'show.preprint :=
   #0 'show.note :=
   #0 'show.english.translation :=
@@ -211,7 +211,7 @@ FUNCTION {bbl.pages.colon}
 
 FUNCTION {bbl.wide.space} { "\quad " }
 
-FUNCTION {bbl.slash} { "//\allowbreak " }
+FUNCTION {bbl.slash} { "//\allowbreak " }%【可修改】如果不想要双斜杠//slash，可以把双引号里边的内容去掉
 
 FUNCTION {bbl.sine.loco}
 { entry.lang lang.zh =
