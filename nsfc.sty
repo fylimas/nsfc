@@ -40,12 +40,19 @@
 	AutoFakeSlant=0.3,
 	AutoFakeBold=3,
 	]{simsun.ttc}
+%\newfontfamily{\WINsong}[%英文
+%Path = ./fonts/,
+%UprightFont    = TimesNewRoman.ttf,
+%BoldFont       = TimesNewRomanBold.ttf,
+%ItalicFont     = TimesNewRomanItalic.ttf,
+%BoldItalicFont = TimesNewRomanBoldItalic.ttf
+%]{Times New Roman}
 \newfontfamily{\WINsong}[%英文
-	Path=./fonts/,
-	AutoFakeSlant=0.3,
-	AutoFakeBold=3,
-	]{TimesNewRoman.ttf}
-\newfontfamily\wingdingsfont{Wingdings.ttf}[Path=./fonts/]
+Path=./fonts/,
+AutoFakeSlant=0.3,
+AutoFakeBold=3,
+]{TimesNewRoman.ttf}
+\newfontfamily\wingdingsfont[Path=./fonts/]{Wingdings.ttf}
 
 %设置模版字体
 \newcommand{\zhkai}{\CJKfamily{WINkai}}
@@ -170,9 +177,9 @@
 \newcommand\nostarsubsection[1]{%
     \refstepcounter{subsection}\begingroup\color{HighLight}
     \vspace{6pt}
-    \zhkai\enkai\fontsize{13pt}{22pt}\selectfont\bfseries%
+    \zhkai\enkai\fontsize{13pt}{22pt}\selectfont%\bfseries%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
-    \par\noindent\arabic{section}.\arabic{subsection}#1\par
+    \par\indent\hspace{3pt}\arabic{section}.\arabic{subsection}#1\par
     \vspace{2pt}
     \endgroup}
 %\newcommand\nostarsubsection[1]{\vspace{-1em}\origsubsection*{#1}\vspace{-0em}}
@@ -194,7 +201,7 @@
 %     \vspace{0pt}
     \zhkai\enkai\fontsize{13pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
-    \par\indent（\arabic{subsubsection}）#1\par%1.1下(1)样式三级标题
+    \par\indent\hspace{0.1pt}（\arabic{subsubsection}）#1\par%1.1下(1)样式三级标题
 %    \par\noindent\arabic{section}.\arabic{subsection}.\arabic{subsubsection}#1\par%1.1.1样式三级标题
 % \vspace{11pt}
     \endgroup}
@@ -218,7 +225,7 @@
 \newenvironment{MS}%
 {%\begingroup\zhsong\ensong\fontsize{12.5pt}{22pt}\selectfont%段落：中文宋体，英文宋体
 	\begingroup\zhkai\ensong\fontsize{12.5pt}{23pt}\selectfont%段落：中文楷体，英文宋体
-	\setlength{\baselineskip}{22.1pt}
+	\setlength{\baselineskip}{23pt}
 	\everydisplay=\expandafter{\the\everydisplay\setstretch{1}%重置正文行间距对数学公式行间距影响
 		%公式上下间距，不需要设置，想设置可以设置
 		\setlength{\abovedisplayskip}{10pt}
@@ -251,6 +258,7 @@
 %------------------------
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
 % Size of the math equations
 %\DeclareMathSizes{10}{10}{7}{5}
 %\DeclareMathSizes{11}{11}{7.7}{5.5}
