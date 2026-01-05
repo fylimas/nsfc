@@ -1,0 +1,127 @@
+%!TEX program = xelatex
+%windows、macOS用户都可用
+\documentclass[UTF8, punct, oneside,fontset=none]{ctexbook}
+\usepackage[windows]{nsfc}
+%macOS用户独享
+%\documentclass[UTF8, punct, oneside]{ctexbook}
+%\usepackage[macos]{nsfc}
+
+%%用来对比模版有无变化。对比时，请注释掉以下语句：
+\renewcommand{\input}[1]{\vspace{\baselineskip}}
+%\excludecomment{MS}%用来对比模版有无变化
+%或者下边这种方法
+%\renewcommand{\input}[1]{ }%用来对比模版有无变化
+
+%如果你个人文件和文件夹以⚠︎开头进行命名，可以省心更新模版。参见README.md
+
+\pagestyle{empty} % 第二页以后页码空白
+\usepackage[a4paper, left = 3.2cm, right = 3.2cm, top = 2.72cm, bottom = 2.54cm]{geometry}%页边距
+
+\usepackage{times}
+
+\usepackage{setspace}
+
+\usepackage{comment}
+
+\graphicspath{{figures/}}   % 设置图片所存放的目录
+\begin{document}
+%\thispagestyle{empty} 　　　% 首页页码空白
+
+{\centering\zhkai\enkai\fontsize{16pt}{21pt}\selectfont
+\setlength{\baselineskip}{21pt}%最后设置，防止被fontsize中的覆盖
+\hspace{30pt}\textbf{报告正文（2026版）}\par
+\vspace{5.46pt}}%0.2(行距倍数)*21(行距)*1.3(word)
+
+%\begin{comment}
+{\zhkai\enkai\fontsize{14pt}{22pt}\selectfont
+ \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
+参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。申请书正文原则上不超过30页，鼓励简洁表达。
+\textbf{\color{YSFblue}请勿删除或改动下述提纲标题及括号中的文字。}\par
+\vspace{.3pt}}%0.5(行距倍数)*22(行距)*1.3(word)
+%\end{comment}
+
+\chapter{\textbf{立项依据}
+	
+\vspace{5pt}（为什么要开展此项研究，研究的科学技术价值如何）}
+
+\begin{MS}
+	\input{sections/一依据}
+\end{MS}
+
+\chapter{\textbf{研究内容}
+	
+（提纲不做限制，请按照研究工作的自身逻辑撰写。应提炼出特 色与创新点、年度研究计划）}
+
+\begin{MS}
+	\input{sections/二内容}
+\end{MS}
+
+\chapter{\textbf{研究基础}}
+\section{\textbf{研究基础与可行性分析}\kg{0.2em}（与本项目相关的研究工作积累和已 取得的研究工作成绩，研究风险的应对措施等）；}
+
+\begin{MS}
+	\input{sections/三1基础}
+\end{MS}
+
+\section{\textbf{工作条件}\kg{0.2em}（包括已具备的实验条件，\kg{0.2em}尚缺少的实验条件和拟解决的途径，包括利用国家实验室、全国重点实验室和部门重点实验室等研究基地的计划与落实情况）；}
+
+\begin{MS}
+	\input{sections/三2条件}
+\end{MS}
+
+\section{\textbf{正在承担的与本项目相关的科研项目情况}\kg{0.3em}（申请人正在承担的与本项目相关的科研项目情况，包括国家自然科学基金的项目和国家其他科技计划项目，要注明项目的资助机构、\kg{0.1em}项目类别、\kg{0.1em}批准号、\kg{0.1em}项目名称、获资助金额、起止年月、与本项目的关系及负责的内容等）；}
+
+\begin{MS}
+	\input{sections/三3正承担}
+\end{MS}
+
+
+\section{\textbf{完成国家自然科学基金项目情况}\kg{0.2em}（对申请人负责的前一个已资助期满的科学基金项目（项目名称及批准号）完成情况、后续研究进展及与本申请项目的关系加以详细说明。另附该项目的研究工作总结摘要（限500字）和相关成果详细目录）。}
+
+\begin{MS}
+	\input{sections/三4已完成}
+\end{MS}
+
+\chapter{\textbf{其他需要说明的情况}}
+\section{申请人同年申请不同类型的国家自然科学基金项目情况\kg{0.2em}（列明同年申请的其他项目的项目类型、项目名称信息，并说明与本项目之间的区别与联系；已收到自然科学基金委不予受理或不予资助决定的，无需列出）。}
+
+\begin{MS}
+	\input{sections/四1同年申请}
+\end{MS}
+
+\vspace{5pt}
+\section{具有高级专业技术职务\kg{0.3em}（职称）\kg{0.3em}的申请人是否存在同年申请或者参与申请国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，申请或参与申请的其他项目的项目类型、项目名称、单位名称、上述人员在该项目中是申请人还是参与者，并说明单位不一致原因。}
+
+\begin{MS}
+	\input{sections/四2同年不一致}
+\end{MS}
+
+\vspace{8pt}
+\section{具有高级专业技术职务\kg{0.3em}（职称）\kg{0.3em}的申请人是否存在与正在承担的国家自然科学基金项目的单位不一致的情；况如存在上述情况，列明所涉及人员的姓名，正在承担项目的批准号、项目类型、项目名称、单位名称、起止年月，并说明单位不一致原因。}
+
+\begin{MS}
+	\input{sections/四3已有不一致}
+\end{MS}
+
+\vspace{10pt}
+\section{同年以不同专业技术职务\kg{0.3em}（职称）\kg{0.3em}申请或参与申请科学基金项目的情况（应详细说明原因）。}
+
+\begin{MS}
+	\input{sections/四4同年不同职务}
+\end{MS}
+
+\vspace{15pt}
+\section{申请人在撰写本申请书时使用生成式人工智能的情况，请详 细说明申请书中使用的位置和内容。}
+
+\begin{MS}
+	\input{sections/四5人工智能}
+\end{MS}
+
+\vspace{10pt}
+\section{其他（包括但不限于使用以他人名义申报过的申请书；如有，请详细说明）。}
+
+\begin{MS}
+	\input{sections/四6其他}
+\end{MS}
+
+\end{document}
