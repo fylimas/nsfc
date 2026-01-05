@@ -136,8 +136,11 @@
     \par\noindent\textbf{\kg{1.5em}\ifdim#1>0pt\relax\hspace*{#1}\fi（\chinese{chapter}）}#2\par
     \vspace{0pt}
     \endgroup}
-
 \newcommand\starchapter[1]{\vspace{-1em}\origchapter*{#1}\vspace{-0em}}
+
+%根据是否在MS环境中切换section颜色，防止专家以为还是采用的旧模版
+\newif\ifinMS
+\inMSfalse
 
 % For the section name like 2．项目的研究内容、研究目标，以及拟解决的关键科学问题（此部分为重点阐述内容）；
 \let\origsection\section
@@ -145,12 +148,18 @@
 \newcommand\nostarsection[1]{%
     \refstepcounter{section}\begingroup
 %     \vspace{0pt}
-    \color{NSFblue}\zhkai\enkai\fontsize{14.2pt}{22pt}\selectfont%
+	\ifinMS\color{HighLight}\else\color{NSFblue}\fi%
+    \zhkai\enkai\fontsize{14.2pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent\arabic{section}.#1\par%24年全角点；25年半角点；
 % \vspace{11pt}
     \endgroup}
-\newcommand\starsection[1]{\origsection*{#1}}
+\newcommand\starsection[1]{%
+	\begingroup
+		\ifinMS\color{HighLight}\else\color{NSFblue}\fi%
+		\origsection*{#1}%
+	\endgroup
+}
 
 
 %------------------------
@@ -216,8 +225,8 @@
 		\setlength{\belowdisplayskip}{10pt}%
 		\setlength{\abovedisplayshortskip}{0pt}%对于上一行半行文本的情况
 		\setlength{\belowdisplayshortskip}{10pt}%%对于下一行半行文本的情况
-}}
-{\endgroup}
+}\inMStrue}
+{\inMSfalse\endgroup}
 
 %CTEX包自动引用xeCJK包，文档查看xeCJK
 %------------------------
