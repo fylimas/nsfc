@@ -3,7 +3,42 @@
 % 本模版即修改自 2019 年的 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了【2024年又进行了更新】。
 % 经历 3 年的使用和打磨，特别为 macOS 系统做适配，同时应同行鼓励，对windows系统做适配，这里公布出来给潜在用户做参考。
 % -------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{nsfc}[2026/01/06 NSFC 面青地]
 \makeatletter
+
+%选项选择：kai输出正文MS楷体；song输出正文MS宋体
+\newif\ifMS@kai
+\newif\ifMS@song
+\MS@kaitrue%默认正文楷体
+\DeclareOption{kai}{\MS@kaitrue\MS@songfalse}
+\DeclareOption{song}{\MS@songtrue\MS@kaifalse}
+\DeclareOption*{\OptionNotUsed}
+\ProcessOptions\relax
+
+\ifMS@kai
+	\def\MS@chinesefont{\zhkai}
+\else
+	\ifMS@song
+		\def\MS@chinesefont{\zhsong}
+	\else
+		\def\MS@chinesefont{\zhkai} % fallback
+	\fi
+\fi
+
+%选项选择：on输出正文MS文字；off不输出正文MS文字
+\newif\ifMS@on
+\newif\ifMS@off
+\MS@kaitrue%默认正文楷体
+\DeclareOption{on}{\MS@ontrue\MS@offfalse}
+\DeclareOption{off}{\MS@offtrue\MS@onfalse}
+\DeclareOption*{\OptionNotUsed}
+\ProcessOptions\relax
+\ifMS@off
+  \AtBeginDocument{%
+	\renewcommand{\input}[1]{\vspace{\baselineskip}}%
+}
+\fi
 %------------------------
 %xeCJK包的命令；要放到最前
 %------------------------
@@ -223,15 +258,14 @@ AutoFakeBold=3,
 %正文段落
 %------------------------
 \newenvironment{MS}%
-{%\begingroup\zhsong\ensong\fontsize{12.5pt}{22pt}\selectfont%段落：中文宋体，英文宋体
-	\begingroup\zhkai\ensong\fontsize{12.5pt}{23pt}\selectfont%段落：中文楷体，英文宋体
+{\begingroup\MS@chinesefont\ensong\fontsize{12.5pt}{23pt}\selectfont%段落：中文楷体/宋体，英文宋体
 	\setlength{\baselineskip}{23pt}
 	\everydisplay=\expandafter{\the\everydisplay\setstretch{1}%重置正文行间距对数学公式行间距影响
 		%公式上下间距，不需要设置，想设置可以设置
 		\setlength{\abovedisplayskip}{10pt}
-		\setlength{\belowdisplayskip}{10pt}%
+		\setlength{\belowdisplayskip}{7pt}%
 		\setlength{\abovedisplayshortskip}{0pt}%对于上一行半行文本的情况
-		\setlength{\belowdisplayshortskip}{10pt}%%对于下一行半行文本的情况
+		\setlength{\belowdisplayshortskip}{5pt}%%对于下一行半行文本的情况
 }\inMStrue}
 {\inMSfalse\endgroup}
 

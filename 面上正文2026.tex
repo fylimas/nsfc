@@ -1,17 +1,11 @@
 %!TEX program = xelatex
 %windows、macOS用户都可用
-\documentclass[UTF8, punct, oneside,fontset=none]{ctexbook}
+\documentclass[UTF8, punct, oneside, fontset=none, kai, on]{ctexbook}
+%kai/song:正文楷体/宋体，on/off:输出正文/不输出正文
 \usepackage[windows]{nsfc}
 %macOS用户独享
 %\documentclass[UTF8, punct, oneside]{ctexbook}
 %\usepackage[macos]{nsfc}
-
-%%用来对比模版有无变化。正常使用时，请注释掉以下语句：
-\renewcommand{\input}[1]{\vspace{\baselineskip}}
-%\excludecomment{MS}%用来对比模版有无变化
-%或者下边这种方法
-%\renewcommand{\input}[1]{ }%用来对比模版有无变化
-
 %如果你个人文件和文件夹以⚠︎开头进行命名，可以省心更新模版。参见README.md
 
 \pagestyle{empty} % 第二页以后页码空白
@@ -41,7 +35,7 @@
 
 \chapter{\textbf{立项依据：}
 	
-\hspace{0.3pt}（为什么要开展此项研究，研究的科学技术价值如何）}
+\vspace{2.5pt}\hspace{0.3pt}（为什么要开展此项研究，研究的科学技术价值如何）}
 
 \begin{MS}
 	\input{sections/一依据}
