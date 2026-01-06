@@ -51,6 +51,16 @@
 参考文件\cite{test6}。
 
 对于中文参考文献，bib条目中需要有language = {zh}，参见\cite{test2}。
+
+对于非数字形式/作者年份形式的参考文献引用，阅读nsfc.sty对应这一部分进行修改：
+\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
+\usepackage[square,numbers,sort&compress]{natbib}%数字引用[1]
+\bibliographystyle{bibs/gbt7714-numerical}
+%\usepackage[round,sort]{natbib}%作者年引用Author(2022)
+%\bibliographystyle{bibs/gbt7714-author-year}
+%bst定制方法：修改对应.bst文件的FUNCTION {load.config}部分设置
+\end{lstlisting}
+
 \subsubsection{列表}
 无序列表\footnote{值得注意的是，不需要一定要用列表环境，用加粗、换行、缩进同样能达到效果。
 	因为咱们的初衷，还是LaTeX在排版文献和公式上有优势，发挥这一个优势就行了，其他部分不需要强行套用。文本本身还是最重要、需要大家投入精力的部分。}的例子：
