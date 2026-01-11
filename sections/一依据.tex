@@ -61,6 +61,12 @@
 %bst定制方法：修改对应.bst文件的FUNCTION {load.config}部分设置
 \end{lstlisting}
 
+要进一步定制bst的话，需要修改对应.bst文件的FUNCTION {load.config}部分设置。
+例如，如果需要设置是否要文献类型标识，可以修改bibs/gbt7714-numerical.bst文件或bibs/gbt7714-author-year.bst文件的以下部分：
+\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
+  #0 'show.mark := %【可修改】如果不想要[J][M]这种文献类型标识，改为#0；想要文献类型标识改为#1
+\end{lstlisting}
+
 \subsubsection{列表}
 无序列表\footnote{值得注意的是，不需要一定要用列表环境，用加粗、换行、缩进同样能达到效果。
 	因为咱们的初衷，还是LaTeX在排版文献和公式上有优势，发挥这一个优势就行了，其他部分不需要强行套用。文本本身还是最重要、需要大家投入精力的部分。}的例子：
@@ -87,7 +93,7 @@
 编号公式如下：（这个圆括号的内容只是为了方便看公式与文字的行间距）
 \begin{equation}
 \begin{cases}
-a\\\bm{ABCD}
+a\\\bm{ABCD}\\\mathbf{ABCD}
 \end{cases}
 \end{equation}
 以及（这个圆括号的内容只是为了方便看公式与文字的行间距）
