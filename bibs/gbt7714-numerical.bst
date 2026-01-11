@@ -74,7 +74,7 @@ FUNCTION {load.config}
   #0 'link.title :=
   #1 'title.in.journal :=
   #0 'show.patent.country :=
-  #0 'show.mark := %【可修改】如果不想要[J][M]这种文献类型表示，改为0
+  #0 'show.mark := %【可修改】如果不想要[J][M]这种文献类型表示，改为0，想要改为1
   #0 'space.before.mark :=
   #1 'show.medium.type :=
   "slash" 'component.part.label :=
