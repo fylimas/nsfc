@@ -262,6 +262,7 @@ AutoFakeBold=3,
 	\setlength{\baselineskip}{23pt}
 	\everydisplay=\expandafter{\the\everydisplay\setstretch{1}%重置正文行间距对数学公式行间距影响
 		%公式上下间距，不需要设置，想设置可以设置
+		\fontsize{12.5pt}{23pt}\selectfont%根据第一个参数选择DeclareMathSizes的后三个参数字体
 		\setlength{\abovedisplayskip}{10pt}
 		\setlength{\belowdisplayskip}{7pt}%
 		\setlength{\abovedisplayshortskip}{0pt}%对于上一行半行文本的情况
@@ -295,10 +296,11 @@ AutoFakeBold=3,
 \usepackage{bm}
 \usepackage{newtxmath}
 % Size of the math equations
-%\DeclareMathSizes{10}{10}{7}{5}
-%\DeclareMathSizes{11}{11}{7.7}{5.5}
-%\DeclareMathSizes{12.5}{11}{8.4}{6}
-%\DeclareMathSizes{13}{13}{9.1}{6.5}
+%\DeclareMathSizes{<正文大小>}{<display style 大小>}{<script style 大小>}{<scriptscript style 大小>}根据正文中设置的第一个参数，设定对应的后边几个参数字体大小
+\DeclareMathSizes{10}{10}{7}{5}
+\DeclareMathSizes{11}{11}{7.7}{5.5}
+\DeclareMathSizes{12.5}{12.5}{8.4}{6}
+\DeclareMathSizes{13}{13}{9.1}{6.5}
 \DeclareMathSizes{14}{14}{9.8}{7}
 
 \usepackage{graphicx}
@@ -324,18 +326,28 @@ AutoFakeBold=3,
 \setlength{\abovecaptionskip}{0pt}  % 修改 caption 与图表上方的距离
 \setlength{\belowcaptionskip}{-10pt} % 修改 caption 与正文的距离
 
-%\numberwithin{figure}{section}%关联图号和章节，应该是每一个section重置一下图号计数器
+
+%全局：跨越多个Chapter的图/表/公式的计数
+\def\cl@chapter{%
+	\@elt{footnote}%
+	\@elt{section}%
+	\@elt{subsection}%
+	\@elt{subsubsection}%
+	\@elt{paragraph}%
+	\@elt{subparagraph}%% 注意：没有 figure, table, equation
+}
 \renewcommand {\thefigure}{\arabic{figure}}%图1
-%\renewcommand {\thefigure}{\thesection{}-\arabic{figure}}%图1.1-1
-%如果想修改图中的数字字体，就在对应部分添加\ensong\selectfont\arabic{figure}，或者\enkai\selectfont\arabic{figure}。
-
 \renewcommand {\thetable}{\arabic{table}}%表1
-
-%公式计数器
-\renewcommand{\theequation}
-{\arabic{equation}}%样式：(1)
+\renewcommand{\theequation}{\arabic{equation}}%样式：(1)
 %{\thesection{}-\arabic{figure}}%样式：(1.1-1)
 %{\thechapter{}-\arabic{figure}}%样式：(1-1)，注意（一）立项依据里的所有节都是第一章
+
+%局部：按照Chapter清零重新开始的图/表/公式的计数
+%\numberwithin{figure}{section}%关联图号和章节，应该是每一个section重置一下图号计数器
+%\renewcommand {\thefigure}{\thesection{}-\arabic{figure}}%图1.1-1
+%如果想修改图中的数字字体，就在对应部分添加\ensong\selectfont\arabic{figure}，或者\enkai\selectfont\arabic{figure}。
+%表和公式类似
+
 %------------------------
 %列表
 %------------------------
