@@ -1,14 +1,34 @@
 
+
+
 免责声明：敬请大家仔细对比本模版与官方word转pdf后的差别，自行确定是否采用。
-取消正文tex这一行注释即可对比：\verb|%\renewcommand{\input}[1]|\\
-\verb|{\vspace{\baselineskip}}|。
 如果采用博后的分阶段评审，限制只能用word，那么本项目就寿终正寝了。个人认为，2026年系统仍然上传PDF，只要人眼无法分辨与官方区别，就可以。
+
+
+\textbf{只需要修改`sections`,`figures`,`ref.bib`，那么如果模版更新，只需要拷贝这三项过去直接编译，就是最新版。}
+
+\section{自定义设置方法}
+【常规】自定义设置方法
+
+\textbf{只需要修改`sections/个性化设置.sty`文件。}
+\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
+%【1】标题颜色
+\definecolor{HighLight}{RGB}{0,0,0}
+%【2】正文字体设置
+%\global\MS@kaitrue\global\MS@songfalse%楷体正文
+\global\MS@kaifalse\global\MS@songtrue%宋体正文
+%【3】是否屏蔽正文
+\global\MS@offtrue\global\MS@onfalse%屏蔽正文
+%\global\MS@ontrue\global\MS@offfalse%不屏蔽正文
+\end{lstlisting}
+
+【高阶】
+需要修改`nsfc.sty`文件中的定义。**如非必要，不建议修改。**
 
 \section{编译方法}
 \begin{enumerate}
 	\item 编译：XeLaTex->bibtex->XeLaTeX->XeLaTeX
 	\item 排错：多看编译错误，多查询错误解决方法；编译警告，只要不影响PDF，就不用管。本模版多人使用，可以认为不存在编译错误。
-	\item 自定义格式：多阅读一下nsfc.sty，可以解决你绝大部分问题。超过nsfc.sty范围的，建议不要想办法定制，事倍功半。
 \end{enumerate}
 
 
@@ -23,7 +43,7 @@
 	\captionsetup{justification=centering} %图题居中
 	\caption{项目文件夹结构}
 \end{figure}
-只需要修改上图中蓝色选中区域文件即可。其他剩余文件，可以直接采用模版替换，编译就是最新版。
+只需要修改图中蓝色选中区域文件，即\verb|sections, figures, ref.bib|即可。其他剩余文件，可以直接采用模版替换，编译就是最新版。
 
 \subsubsection{章节}\label{subsubsec:t}
 \verb|\label{subsubsect:t}|
