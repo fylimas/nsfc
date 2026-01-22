@@ -1,10 +1,5 @@
-% -------------------------------------------------
-% NSFC 官方只有 Word 模版，民间有南开大学程明明教授的 LaTeX [模版](http://www.latexstudio.net/archives/9308)和南京航空航天大学戴一冕博士的 [iNSFC](https://github.com/YimianDai/iNSFC)模版。
-% 本模版即修改自 2019 年的 iNSFC 模版，原来 iNSFC 已经许久不更新，貌似也没有继续更新计划了【2024年又进行了更新】。
-% 经历 3 年的使用和打磨，特别为 macOS 系统做适配，同时应同行鼓励，对windows系统做适配，这里公布出来给潜在用户做参考。
-% -------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{nsfc}[2026/01/06 NSFC 面青地]
+\ProvidesPackage{nsfc}[2026/01/22 NSFC 面青地]
 \makeatletter
 
 %选项选择：kai输出正文MS楷体；song输出正文MS宋体
@@ -36,18 +31,18 @@
 \ProcessOptions\relax
 \ifMS@off
   \AtBeginDocument{%
-	\renewcommand{\input}[1]{\vspace{\baselineskip}}%
+	\renewcommand{\input}[1]{\vspace{0.9\baselineskip}}%
 }
 \fi
 %------------------------
 %xeCJK包的命令；要放到最前
 %------------------------
+\usepackage[CJKspace]{xeCJK} % 关键：启用 CJK 字符间 glue
 \defaultfontfeatures{Mapping=tex-text}%连字符
 %特殊符号的宽度
-\xeCJKsetwidth{、，。；}{1.1em}%符号宽度，可添加‘’“”
-\xeCJKsetwidth{（）}{1em}%符号宽度，可添加‘’“”
-\xeCJKsetup{%中英文间空格的宽度
-	CJKecglue = \hspace{0.3em},}
+\xeCJKsetwidth{、，。；（）}{1.18em}%符号宽度，可添加‘’“”
+\xeCJKsetup{CJKecglue = \hspace{0.3em}}%中英文间空格的宽度
+\xeCJKsetup{CJKglue =  \hspace{0.3em}}%微调中文内部间距【但是ctex完全禁用了
 
 %------------------------
 %字体设置
@@ -172,10 +167,10 @@ AutoFakeBold=3,
 \renewcommand\chapter{\@ifstar{\starchapter}{\nostarchapter}}
 \newcommand\nostarchapter[2][0pt]{%
 \refstepcounter{chapter}\begingroup
-    \vspace{6pt}
+    %\vspace{5pt}
     \color{NSFblue}\zhkai\enkai\fontsize{14.2pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
-    \par\noindent\textbf{\kg{1.5em}\ifdim#1>0pt\relax\hspace*{#1}\fi（\chinese{chapter}）}#2\par
+    \par\noindent\textbf{\hspace{28pt}\ifdim#1>0pt\relax\hspace*{#1}\fi（\chinese{chapter}）}#2\par
     \vspace{0pt}
     \endgroup}
 \newcommand\starchapter[1]{\vspace{-1em}\origchapter*{#1}\vspace{-0em}}

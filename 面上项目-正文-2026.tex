@@ -1,6 +1,5 @@
 %!TEX program = xelatex
-%windows、macOS用户都可用
-\documentclass[UTF8, punct, oneside, fontset=none, kai, on]{ctexbook}
+\documentclass[UTF8, punct, oneside, fontset=none, kai, off]{ctexbook}
 %kai/song:正文楷体/宋体，on/off:输出正文/不输出正文
 \usepackage[windows]{nsfc}
 %macOS用户独享
@@ -9,7 +8,7 @@
 %如果你个人文件和文件夹以⚠︎开头进行命名，可以省心更新模版。参见README.md
 
 \pagestyle{empty} % 第二页以后页码空白
-\usepackage[a4paper, left = 3.05cm, right = 3.05cm, top = 2.72cm, bottom = 2.54cm]{geometry}%页边距
+\usepackage[a4paper, left = 3.00cm, right = 3.00cm, top = 2.70cm, bottom = 2.56cm]{geometry}%页边距
 
 \usepackage{times}
 
@@ -23,7 +22,7 @@
 
 {\centering\zhkai\enkai\fontsize{16pt}{21pt}\selectfont
 \setlength{\baselineskip}{21pt}%最后设置，防止被fontsize中的覆盖
-\hspace{30pt}\textbf{报告正文（2026版）}\par
+\hspace{-11pt}\textbf{报告正文（2026版）}\par
 \vspace{5.46pt}}%0.2(行距倍数)*21(行距)*1.3(word)
 
 %\begin{comment}
@@ -35,7 +34,7 @@
 
 \chapter{\textbf{立项依据：}
 	
-\vspace{2.5pt}\hspace{0.3pt}（为什么要开展此项研究，研究的科学技术价值如何）}
+\hspace{0.3pt}（为什么要开展此项研究，研究的科学技术价值如何）}
 
 \begin{MS}
 	\input{sections/一依据}
@@ -50,7 +49,7 @@
 \end{MS}
 
 \chapter{\textbf{研究基础：}}
-\section{\textbf{研究基础与可行性分析}（与本项目相关的研究工作积累和已 取得的研究工作成绩，研究风险的应对措施等）；}
+\section{\textbf{研究基础与可行性分析}（与本项目相关的研究工作积累和已取得的研究工作成绩，研究风险的应对措施等）；}
 
 \begin{MS}
 	\input{sections/三1基础}
@@ -82,36 +81,25 @@
 	\input{sections/四1同年申请}
 \end{MS}
 
-%\vspace{5pt}
 \section{具有高级专业技术职务（职称）的申请人或者主要参与者是否存在同年申请或者参与申请国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，申请或参与申请的其他项目的项目类型、项目名称、单位名称、上述人员在该项目中是申请人还是参与者，并说明单位不一致原因。}
 
 \begin{MS}
 	\input{sections/四2同年不一致}
 \end{MS}
 
-%\vspace{8pt}
 \section{具有高级专业技术职务（职称）的申请人或者主要参与者是否存在与正在承担的国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，正在承担项目的批准号、项目类型、项目名称、单位名称、起止年月，并说明单位不一致原因。}
 
 \begin{MS}
 	\input{sections/四3已有不一致}
 \end{MS}
 
-%\vspace{10pt}
 \section{申请人和主要参与者同年以不同专业技术职务（职称）申请或参与申请科学基金项目的情况（应详细说明原因）。}
 
 \begin{MS}
 	\input{sections/四4同年不同职务}
 \end{MS}
 
-%\vspace{15pt}
-\section{申请人在撰写本申请书时使用生成式人工智能的情况，请详细说明申请书中使用的位置和内容。}
-
-\begin{MS}
-	\input{sections/四5人工智能}
-\end{MS}
-
-%\vspace{10pt}
-\section{其他（包括但不限于使用以他人名义申报过的申请书；如有，请详细说明）。}
+\section{其他。}
 
 \begin{MS}
 	\input{sections/四6其他}
