@@ -61,12 +61,12 @@
 %------------------------
 %xeCJK包的命令；要放到最前
 %------------------------
-\usepackage[CJKspace]{xeCJK} % 关键：启用 CJK 字符间 glue
+\usepackage{xeCJK}
 \defaultfontfeatures{Mapping=tex-text}%连字符
 %特殊符号的宽度
 \xeCJKsetwidth{、，。；（）}{1.18em}%符号宽度，可添加‘’“”
 \xeCJKsetup{CJKecglue = \hspace{0.3em}}%中英文间空格的宽度
-\xeCJKsetup{CJKglue =  \hspace{0.3em}}%微调中文内部间距【但是ctex完全禁用了
+%\xeCJKsetup{CJKglue =  \hspace{0.3em}}%微调中文内部间距【但是ctex完全禁用了
 
 %------------------------
 %字体设置
@@ -359,6 +359,26 @@ AutoFakeBold=3,
 %\renewcommand {\thefigure}{\thesection{}-\arabic{figure}}%图1.1-1
 %如果想修改图中的数字字体，就在对应部分添加\ensong\selectfont\arabic{figure}，或者\enkai\selectfont\arabic{figure}。
 %表和公式类似
+
+%------------------------
+%定义定理等
+%------------------------
+\let\openbox\relax % 解决 newtxmath 与 amsthm 的 \openbox 冲突
+\usepackage{amsthm}
+% 定义新的 theorem 样式
+\newtheoremstyle{NSFthm}% 名称
+{3pt}% 上间距
+{3pt}% 下间距
+{\MSzh\selectfont}% 正文样式
+{}% 缩进
+{\bfseries\MSzh\selectfont}% 标题字体（加粗宋体）
+{.}% 标题后标点
+{0.5em}% 标题与正文间距
+{}% 自定义标题格式（可选）
+% 应用该样式
+\theoremstyle{NSFthm}
+\newtheorem{definition}{定义}%[chapter] % 或 [section]，根据文档类调整
+\newtheorem{theorem}{定理}
 
 %------------------------
 %列表
