@@ -46,8 +46,16 @@
 只需要修改图中蓝色选中区域文件，即\verb|sections, figures, ref.bib|即可。其他剩余文件，可以直接采用模版替换，编译就是最新版。
 
 \subsubsection{章节}\label{subsubsec:t}
-\verb|\label{subsubsect:t}|
-引用章节\verb|\ref{subsubsec:t}|，生成为：\ref{subsubsec:t}。这个样式可能不是你想要的，那种情况下，就手敲吧！申请书不像论文，这种情况应该没几个。
+
+\begin{itemize}
+	\item \verb|\label{subsubsect:t}|
+	引用章节\verb|\ref{subsubsec:t}|，生成为：\ref{subsubsec:t}。这个样式可能不是你想要的，那种情况下，就手敲吧！申请书不像论文，这种情况应该没几个。
+	\item 章节标题的话，如果编号、字体啥的不喜欢，也可以手动敲。示例如下：
+	
+	\noindent\textcolor{blue}{\textbf{1.1 测试}}
+	
+	其中，\verb|\noident|标识没有首行缩进。要控制缩进距离，可以用\verb|\hspace{10pt}|手动缩进。缺点就是，不能自动编号，不能自动引用。但是，申请书不像论文，这种情况应该没几个。
+\end{itemize}
 
 \subsubsection{字体}
 中文\textbf{粗体}；\textbf{bold} font；
@@ -137,6 +145,11 @@ $$
 $$
 公式的上下间距参见nsfc.sty中公式上下间距部分。
 
+数学字体：
+mathcal:$\mathcal{XYZ}$
+mathbf:$\mathbf{Y}$
+mathbb:$\mathbb{Z}$
+
 
 \subsubsection{图}
 图片的例子：
@@ -171,6 +184,14 @@ $$
 		\hline
 	\end{tabular}
 \end{table}
+
+\subsubsection{定义定理等}
+\begin{definition}
+这是一个定义
+\end{definition}
+\begin{theorem}
+	这是一个定理
+\end{theorem}
 
 \section{某页最后一段行距可能很窄？}
 如果没有这个问题，就不用管这个事情。
