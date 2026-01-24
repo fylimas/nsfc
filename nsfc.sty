@@ -195,28 +195,51 @@ AutoFakeBold=3,
 
 % For the section name like 2．项目的研究内容、研究目标，以及拟解决的关键科学问题（此部分为重点阐述内容）；
 \let\origsection\section
-\renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
-\newcommand\nostarsection[1]{%
-    \refstepcounter{section}\begingroup
-	\ifinMS%判断是否在MS中
-		\color{HighLight}
-		\MSzh\MSen\fontsize{14.2pt}{22pt}\selectfont%
-	\else
-		\color{NSFblue}
-		\zhkai\enkai\fontsize{14.2pt}{22pt}\selectfont%
-	\fi%
-    \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
-    \par\indent\arabic{section}.#1\par%24年全角点；25年半角点；
-% \vspace{11pt}
-    \endgroup}
-\newcommand\starsection[1]{%
+\renewcommand\section{%
+	\@ifstar{\origsection*}%
+	{\@ifnextchar[{\sectionwithopt}{\sectiondefault}}%
+}
+\def\sectionwithopt[#1]#2{%
+	\sectiondo{#1}{#2}%
+}
+\def\sectiondefault#1{%
+	\sectiondo{h}{#1}%默认 h = half（半角点）
+}
+\def\sectiondo#1#2{%
+	\refstepcounter{section}%
 	\begingroup
-		\ifinMS\color{HighLight}\else\color{NSFblue}\fi%
-		\origsection*{#1}%
+	\ifinMS%判断是否在MS中
+	\color{HighLight}\MSzh\MSen\fontsize{14.2pt}{22pt}\selectfont%
+	\else
+	\color{NSFblue}\zhkai\enkai\fontsize{14.2pt}{22pt}\selectfont%
+	\fi
+	\setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
+	\par\indent
+	\arabic{section}%
+	\ifx#1f．\else.\fi#2\par
 	\endgroup
 }
-
-
+%\let\origsection\section%26年，只有面上这里是全角点，其他都是半角点，所以需要重新定义，引入一个可选参数。参见上述部分。
+%\renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
+%\newcommand\nostarsection[1]{%
+%	\refstepcounter{section}\begingroup
+%	\ifinMS%判断是否在MS中
+%	\color{HighLight}
+%	\MSzh\MSen\fontsize{14.2pt}{22pt}\selectfont%
+%	\else
+%	\color{NSFblue}
+%	\zhkai\enkai\fontsize{14.2pt}{22pt}\selectfont%
+%	\fi%
+%	\setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
+%	\par\indent\arabic{section}.#1\par%24年全角点；25年半角点；
+%	% \vspace{11pt}
+%	\endgroup}
+%\newcommand\starsection[1]{%
+%	\begingroup
+%	\ifinMS\color{HighLight}\else\color{NSFblue}\fi%
+%	\origsection*{#1}%
+%	\endgroup
+%}
 %------------------------
 %正文部分的标题
 %------------------------
