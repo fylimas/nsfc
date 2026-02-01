@@ -118,10 +118,22 @@
 
 \subsubsection{公式}
 
+数学字体：
+\verb|\mathcal|：$\mathcal{XYZ}$，
+\verb|\mathbb|：$\mathbb{XYZ}$，
+\verb|\mathbf|：$\mathbf{XYZ}$，这个往往不加粗，需要用
+\verb|\symbf|：$\symbf{XYZ}$，
+\verb|\symbfit|：$\symbfit{XYZ}$，
+
+\begin{itemize}
+	\item 标量/普通变量：$x,t$
+	\item 向量：$\symbfit{v}$；矩阵：$\symbfup{A}$
+\end{itemize}
+
 编号公式如下：（这个圆括号的内容只是为了方便看公式与文字的行间距）
 \begin{align}
 \begin{cases}
-a\\\bm{ABCD}\\\mathbf{ABCD}
+a\\b
 \end{cases}
 \end{align}
 以及（这个圆括号的内容只是为了方便看公式与文字的行间距）
@@ -145,10 +157,7 @@ $$
 $$
 公式的上下间距参见nsfc.sty中公式上下间距部分。
 
-数学字体：
-mathcal:$\mathcal{XYZ}$
-mathbf:$\mathbf{Y}$
-mathbb:$\mathbb{Z}$
+
 
 
 \subsubsection{图}

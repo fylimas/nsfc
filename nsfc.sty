@@ -37,6 +37,8 @@
 %【3】是否屏蔽正文
 \global\MS@offtrue\global\MS@onfalse%屏蔽正文
 %\global\MS@ontrue\global\MS@offfalse%不屏蔽正文
+%【4】设置数学字体
+\global\def\selectedmathfont{latinmodern-math}
 }
 
 
@@ -58,6 +60,7 @@
 	\renewcommand{\input}[1]{\vspace{0.9\baselineskip}}%
 }
 \fi
+
 %------------------------
 %xeCJK包的命令；要放到最前
 %------------------------
@@ -328,8 +331,21 @@ AutoFakeBold=3,
 %------------------------
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{bm}
-\usepackage{newtxmath}
+%\usepackage{bm}
+%\usepackage{newtxmath}
+\usepackage{unicode-math}
+% 根据 \selectedmathfont 的值设置字体
+\def\cambrianame{cambria-math}
+\ifdefined\selectedmathfont
+	\ifx\selectedmathfont\cambrianame
+		\setmathfont[Path=./fonts/math/, Extension=.ttf]{cambria-math}%处理 cambria 特例，其余用 .otf
+	\else
+		\setmathfont[Path=./fonts/math/, Extension=.otf]{\selectedmathfont}
+	\fi
+\else
+	\setmathfont[Path=./fonts/math/, Extension=.otf]{latinmodern-math}
+\fi
+
 % Size of the math equations
 %\DeclareMathSizes{<正文大小>}{<display style 大小>}{<script style 大小>}{<scriptscript style 大小>}根据正文中设置的第一个参数，设定对应的后边几个参数字体大小
 \DeclareMathSizes{10}{10}{7}{5}
@@ -484,3 +500,7 @@ AutoFakeBold=3,
 %\meaning\cite等
 
 \makeatother
+%TODO 2027年升级计划
+%自定义路径：\newcommand{\MSsections}{sections/}，\input{\MSsections 一1依据}，包括sections,figures,ref.bib
+%正文和小标题字体进一步区分
+
