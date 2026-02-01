@@ -56,7 +56,7 @@
 
 ## 历史信息
 
-NSFC 官方只有 Word 模版。2019年时，民间有南开大学程明明教授的 LaTeX [模版](http://www.latexstudio.net/archives/9308)和南京航空航天大学戴一冕博士的 [iNSFC](https://github.com/YimianDai/iNSFC)模版。本模版的制作，便始于 2019 年的 iNSFC 模版，原来 iNSFC 许久不更新，后于2024年重启更新。这期间，热心老师也制作了不少其他模版，包括：[Ruzim](https://github.com/Ruzim/NSFC-application-template-latex)、[Readon](https://github.com/Readon/NSFC-application-template-latex)、[huangwb8](https://github.com/huangwb8/ChineseResearchLaTeX)等。
+NSFC 官方只有 Word 模版。2019年时，民间有南开大学程明明教授的 LaTeX [模版](http://www.latexstudio.net/archives/9308)和南京航空航天大学戴一冕博士的 [iNSFC](https://github.com/YimianDai/iNSFC)模版🫡。本模版的制作，便始于 2019 年的 iNSFC 模版，原来 iNSFC 许久不更新，后于2024年重启更新。这期间，热心老师也制作了不少其他模版，包括：[Ruzim](https://github.com/Ruzim/NSFC-application-template-latex)、[Readon](https://github.com/Readon/NSFC-application-template-latex)、[huangwb8](https://github.com/huangwb8/ChineseResearchLaTeX)等🫡。
 
 本模版从 2020～2025 共 6 年一直在使用，未出现形式审查问题，windows、macOS、overleaf、linux用户都可以使用。这里公布出来给潜在用户做参考。
 
@@ -64,3 +64,4 @@ NSFC 官方只有 Word 模版。2019年时，民间有南开大学程明明教�
 - 根据20260105最新版青年基金2026版、面上基金2026版进行更新。
 - 根据20260118指南发布后的面上、地区、青C、青B、青A模版更新。
 - 20260124：取消release下载，避免下载到历史版本。
+- 20260201：增加多个数学字体的可选项
