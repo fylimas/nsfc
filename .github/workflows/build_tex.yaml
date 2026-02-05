@@ -1,0 +1,64 @@
+name: Build LaTeX with Tectonic + Biber
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-tex:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: actions/cache@v3
+        name: Tectonic Cache
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+
+      - uses: wtfjoke/setup-tectonic@v4
+        with:
+          biber-version: "latest"
+
+      - name: Find .tex files with "正文" in filename
+        id: find_tex
+        run: |
+          files=$(find . -maxdepth 1 -type f -name "*正文*.tex" | tr '\n' ' ')
+          if [ -z "$files" ]; then
+            echo "No .tex files containing '正文' found."
+            exit 1
+          fi
+          echo "Found matching .tex files: $files"
+          echo "tex_files=$files" >> $GITHUB_OUTPUT
+
+      - name: Compile each file with Tectonic with Biber 
+        run: |
+          for texfile in ${{ steps.find_tex.outputs.tex_files }}; do
+            if [ -n "$texfile" ]; then
+              echo "Compiling $texfile with Tectonic + Biber..."
+              tectonic "$texfile"
+            fi
+          done
+
+      - name: Collect generated PDFs
+        id: collect_pdfs
+        run: |
+          mkdir -p artifact_pdfs
+          for texfile in ${{ steps.find_tex.outputs.tex_files }}; do
+            pdf="${texfile%.tex}.pdf"
+            if [ -f "$pdf" ]; then
+              echo "PDF file: $pdf"
+              mv "$pdf" artifact_pdfs/
+            fi
+          done
+
+      - name: Upload compiled PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-pdfs
+          path: artifact_pdfs/
+          if-no-files-found: error
