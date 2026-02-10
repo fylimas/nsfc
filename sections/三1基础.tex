@@ -1,51 +1,128 @@
 
 
-这里可能需要列出自己的相关文章。由于文章和依据部分的文献的格式并不一定一致，建议使用下边方法：
+这里可能需要列出自己的相关文章。由于文章和依据部分的文献的格式并不一定一致，可以考虑选择下边两种方法之一：
+
+方法一：拿到bbl文件。这个东西从哪里来的呢？从编译产生的\verb|.bbl|文件中拷贝过来放进来，\textcolor{blue}{作适当修改}，就可以了。
+例如，拿到bbl文件如下：
 \begin{lstlisting}[language=tex, basicstyle=\ttfamily\tiny, keywordstyle=\color{blue}, commentstyle=\color{gray}]
-	\begin{thebibliography}{1}
-		\bibitem{test}
-		\bibauthor{\textbf{C\"aldognetto T\@, Tenti P}}\@. 
-		\bibtitle{Microgrids Operation Based on Master–Slave Cooperative Control}
-		\bibmark{[J]}\@.
-		\bibjournal{IEEE Journal of Emerging and Selected Topics in Power Electronics}\@,
-		\bibvolume{2}\bibnumber{(4)}\thinspace{}\textnormal{:}
-		\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@,
-		\bibyear{2014}\@.
-		\url{doi: 10.1109/JESTPE.2014.2345052}\@.
-	\end{thebibliography}
+\begin{thebibliography}{1}
+	\providecommand{\bibauthor}[1]{#1}
+	\providecommand{\bibeditor}[1]{#1}
+	\providecommand{\bibtranslator}[1]{#1}
+	\providecommand{\bibtitle}[1]{#1}
+	\providecommand{\bibbooktitle}[1]{#1}
+	\providecommand{\bibjournal}[1]{#1}
+	\providecommand{\bibmark}[1]{#1}
+	\providecommand{\bibcountry}[1]{#1}
+	\providecommand{\bibpatentid}[1]{#1}
+	\providecommand{\bibedition}[1]{#1}
+	\providecommand{\biborganization}[1]{#1}
+	\providecommand{\bibaddress}[1]{#1}
+	\providecommand{\bibpublisher}[1]{#1}
+	\providecommand{\bibinstitution}[1]{#1}
+	\providecommand{\bibschool}[1]{#1}
+	\providecommand{\bibvolume}[1]{#1}
+	\providecommand{\bibnumber}[1]{#1}
+	\providecommand{\bibversion}[1]{#1}
+	\providecommand{\bibpages}[1]{#1}
+	\providecommand{\bibmodifydate}[1]{#1}
+	\providecommand{\bibcitedate}[1]{#1}
+	\providecommand{\bibyear}[1]{#1}
+	\providecommand{\bibdate}[1]{#1}
+	\providecommand{\biburl}[1]{\newline\url{#1}}
+	\bibitem{test}
+	\bibauthor{\textbf{C\"aldognetto T\@, Tenti P}}\@. \bibtitle{Microgrids Operation Based
+		on Master–Slave Cooperative Control}\bibmark{[J/OL]}\@. \bibjournal{IEEE
+		Journal of Emerging and Selected Topics in Power Electronics}\@,
+	\bibvolume{2}\bibnumber{(4)}\thinspace{}\textnormal{:
+	}\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@,
+	\bibyear{2014}\@. \url{doi: 10.1109/JESTPE.2014.2345052}\@.
+\end{thebibliography}
 \end{lstlisting}
-效果如下。这个东西从哪里来的呢？从编译产生的\verb|.bbl|文件中拷贝过来放进来，就可以了。
-%\vspace{-50pt}
-%\begin{thebibliography}{1}
-%	\providecommand{\bibauthor}[1]{#1}
-%	\providecommand{\bibeditor}[1]{#1}
-%	\providecommand{\bibtranslator}[1]{#1}
-%	\providecommand{\bibtitle}[1]{#1}
-%	\providecommand{\bibbooktitle}[1]{#1}
-%	\providecommand{\bibjournal}[1]{#1}
-%	\providecommand{\bibmark}[1]{#1}
-%	\providecommand{\bibcountry}[1]{#1}
-%	\providecommand{\bibpatentid}[1]{#1}
-%	\providecommand{\bibedition}[1]{#1}
-%	\providecommand{\biborganization}[1]{#1}
-%	\providecommand{\bibaddress}[1]{#1}
-%	\providecommand{\bibpublisher}[1]{#1}
-%	\providecommand{\bibinstitution}[1]{#1}
-%	\providecommand{\bibschool}[1]{#1}
-%	\providecommand{\bibvolume}[1]{#1}
-%	\providecommand{\bibnumber}[1]{#1}
-%	\providecommand{\bibversion}[1]{#1}
-%	\providecommand{\bibpages}[1]{#1}
-%	\providecommand{\bibmodifydate}[1]{#1}
-%	\providecommand{\bibcitedate}[1]{#1}
-%	\providecommand{\bibyear}[1]{#1}
-%	\providecommand{\bibdate}[1]{#1}
-%	\providecommand{\biburl}[1]{\newline\url{#1}}
-%	\bibitem{test}
-%	\bibauthor{\textbf{C\"aldognetto T\@, Tenti P}}\@. \bibtitle{Microgrids Operation Based
-%		on Master–Slave Cooperative Control}\bibmark{[J/OL]}\@. \bibjournal{IEEE
-%		Journal of Emerging and Selected Topics in Power Electronics}\@,
-%	\bibvolume{2}\bibnumber{(4)}\thinspace{}\textnormal{:
-%	}\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@,
-%	\bibyear{2014}\@. \url{doi: 10.1109/JESTPE.2014.2345052}\@.
-%\end{thebibliography}
+上述bbl文件修改如下：
+\begin{lstlisting}[language=tex, basicstyle=\ttfamily\tiny, keywordstyle=\color{blue}, commentstyle=\color{gray}]
+\vspace{-50pt}%【1】根据自己需要设置
+\begin{thebibliography}{1}
+	\providecommand{\bibauthor}[1]{#1}
+	\providecommand{\bibeditor}[1]{#1}
+	\providecommand{\bibtranslator}[1]{#1}
+	\providecommand{\bibtitle}[1]{#1}
+	\providecommand{\bibbooktitle}[1]{#1}
+	\providecommand{\bibjournal}[1]{#1}
+	\providecommand{\bibmark}[1]{#1}
+	\providecommand{\bibcountry}[1]{#1}
+	\providecommand{\bibpatentid}[1]{#1}
+	\providecommand{\bibedition}[1]{#1}
+	\providecommand{\biborganization}[1]{#1}
+	\providecommand{\bibaddress}[1]{#1}
+	\providecommand{\bibpublisher}[1]{#1}
+	\providecommand{\bibinstitution}[1]{#1}
+	\providecommand{\bibschool}[1]{#1}
+	\providecommand{\bibvolume}[1]{#1}
+	\providecommand{\bibnumber}[1]{#1}
+	\providecommand{\bibversion}[1]{#1}
+	\providecommand{\bibpages}[1]{#1}
+	\providecommand{\bibmodifydate}[1]{#1}
+	\providecommand{\bibcitedate}[1]{#1}
+	\providecommand{\bibyear}[1]{#1}
+	\providecommand{\bibdate}[1]{#1}
+	\providecommand{\biburl}[1]{\newline\url{#1}}
+	%\bibitem{test}%【2】去掉。或者需要保证全文没有重复的test标签
+	[1] %【3】手动添加标号
+	\bibauthor{\textbf{C\"aldognetto T\@, Tenti P}}\@. \bibtitle{Microgrids Operation Based
+		on Master–Slave Cooperative Control}\bibmark{[J/OL]}\@. \bibjournal{IEEE
+		Journal of Emerging and Selected Topics in Power Electronics}\@,
+	\bibvolume{2}\bibnumber{(4)}\thinspace{}\textnormal{:
+	}\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@,
+	\bibyear{2014}\@. \url{doi: 10.1109/JESTPE.2014.2345052}\@.
+\end{thebibliography}
+\end{lstlisting}
+编译之后效果如下：
+\begin{REF}
+\vspace{-50pt}%【1】根据自己需要设置
+\begin{thebibliography}{1}
+	\providecommand{\bibauthor}[1]{#1}
+	\providecommand{\bibeditor}[1]{#1}
+	\providecommand{\bibtranslator}[1]{#1}
+	\providecommand{\bibtitle}[1]{#1}
+	\providecommand{\bibbooktitle}[1]{#1}
+	\providecommand{\bibjournal}[1]{#1}
+	\providecommand{\bibmark}[1]{#1}
+	\providecommand{\bibcountry}[1]{#1}
+	\providecommand{\bibpatentid}[1]{#1}
+	\providecommand{\bibedition}[1]{#1}
+	\providecommand{\biborganization}[1]{#1}
+	\providecommand{\bibaddress}[1]{#1}
+	\providecommand{\bibpublisher}[1]{#1}
+	\providecommand{\bibinstitution}[1]{#1}
+	\providecommand{\bibschool}[1]{#1}
+	\providecommand{\bibvolume}[1]{#1}
+	\providecommand{\bibnumber}[1]{#1}
+	\providecommand{\bibversion}[1]{#1}
+	\providecommand{\bibpages}[1]{#1}
+	\providecommand{\bibmodifydate}[1]{#1}
+	\providecommand{\bibcitedate}[1]{#1}
+	\providecommand{\bibyear}[1]{#1}
+	\providecommand{\bibdate}[1]{#1}
+	\providecommand{\biburl}[1]{\newline\url{#1}}
+	\bibitem{test}%【2】如果全文有重复的test标签，需修改成不重复的，避免和依据部分文献编号混淆
+	\bibauthor{\textbf{C\"aldognetto T\@, Tenti P}}\@. \bibtitle{Microgrids Operation Based
+		on Master–Slave Cooperative Control}\bibmark{[J/OL]}\@. \bibjournal{IEEE
+		Journal of Emerging and Selected Topics in Power Electronics}\@,
+	\bibvolume{2}\bibnumber{(4)}\thinspace{}\textnormal{:
+	}\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@,
+	\bibyear{2014}\@. \url{doi: 10.1109/JESTPE.2014.2345052}\@.
+\end{thebibliography}
+\end{REF}
+
+
+方法二：你也能发现，实际上latex编译参考文献的方法，是把bib文件编译成具有排版格式的bbl文件。既然如此，还可以自行手动编参考文献，也不太难。例如，把排版好的文献拿过来，手动加粗、斜体需要的部分，如下：
+\begin{REF}
+\begin{enumerate}[label={[\arabic*]}]
+	\item \textbf{C\"aldognetto T, Tenti P}. 
+	Microgrids Operation Basedon Master–Slave Cooperative Control[J/OL],
+	 \textit{IEEE Journal of Emerging and Selected Topics in Power Electronics}, 2(4): 1081 1088, 2014. 
+	 \url{doi: 10.1109/JESTPE.2014.2345052}.
+\end{enumerate}
+\end{REF}
+

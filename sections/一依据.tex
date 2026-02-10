@@ -11,19 +11,19 @@
 【常规】自定义设置方法
 
 \textbf{只需要修改`sections/个性化设置.sty`文件。}
-\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
-%【1】标题颜色
-\definecolor{HighLight}{RGB}{0,0,0}
-%【2】正文字体设置
-%\global\MS@kaitrue\global\MS@songfalse%楷体正文
-\global\MS@kaifalse\global\MS@songtrue%宋体正文
-%【3】是否屏蔽正文
-\global\MS@offtrue\global\MS@onfalse%屏蔽正文
-%\global\MS@ontrue\global\MS@offfalse%不屏蔽正文
-\end{lstlisting}
+\lstinputlisting[
+language=tex,
+basicstyle=\ttfamily\small,
+keywordstyle=\color{blue},
+commentstyle=\color{gray},
+breaklines=true,      % 可选：自动换行
+frame=single          % 可选：加边框
+]{sections/个性化设置.sty}
 
 【高阶】
-需要修改`nsfc.sty`文件中的定义。**如非必要，不建议修改。**
+需要修改`nsfc.sty`文件中的定义。
+
+\textbf{如非必要，不建议修改。}
 
 \section{编译方法}
 \begin{enumerate}
@@ -37,13 +37,7 @@
 %\newpage
 \vspace{-5pt}
 
-\begin{figure}[h!]
-	\centering %图片居中
-	\includegraphics[width=6cm]{figures/xiugai.png}
-	\captionsetup{justification=centering} %图题居中
-	\caption{项目文件夹结构}
-\end{figure}
-只需要修改图中蓝色选中区域文件，即\verb|sections, figures, ref.bib|即可。其他剩余文件，可以直接采用模版替换，编译就是最新版。
+只需要修\verb|sections, figures, ref.bib|即可。其他剩余文件，可以直接采用模版替换，编译就是最新版。
 
 \subsubsection{章节}\label{subsubsec:t}
 
@@ -81,7 +75,7 @@
 对于中文参考文献，bib条目中需要有language = {zh}，参见\cite{test2}。
 
 对于非数字形式/作者年份形式的参考文献引用，阅读nsfc.sty对应这一部分进行修改：
-\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}]
+\begin{lstlisting}[language=tex, basicstyle=\ttfamily\small, keywordstyle=\color{blue}, commentstyle=\color{gray}, frame=single]
 \usepackage[square,numbers,sort&compress]{natbib}%数字引用[1]
 \bibliographystyle{bibs/gbt7714-numerical}
 %\usepackage[round,sort]{natbib}%作者年引用Author(2022)
@@ -166,7 +160,7 @@ $$
 \centering %图片居中
 \includegraphics[width=2cm]{figures/xiugai.png}
 \captionsetup{justification=centering} %图题居中
-\caption{这是图题This is caption}
+\caption{这是图题}
 \end{figure}
 
 图题和表头若想取消加粗，去掉nsfc.sty中caption部分的\verb|\bfseries|即可。
