@@ -187,7 +187,7 @@ AutoFakeBold=3,
     %\vspace{5pt}
     \color{NSFblue}\zhkai\enkai\fontsize{14.2pt}{22pt}\selectfont%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
-    \par\noindent\textbf{\hspace{28pt}\ifdim#1>0pt\relax\hspace*{#1}\fi（\chinese{chapter}）}#2\par
+    \par\noindent\textbf{\hspace{28pt}\hspace*{#1}（\chinese{chapter}）}#2\par
     \vspace{0pt}
     \endgroup}
 \newcommand\starchapter[1]{\vspace{-1em}\origchapter*{#1}\vspace{-0em}}
